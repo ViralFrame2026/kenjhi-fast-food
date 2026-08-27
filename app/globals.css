@@ -51,3 +51,312 @@ opacity:.8}
 
 @media(max-width:900px){
 .top{height:78px;grid-template-columns:1fr auto;padding:0 14px}.top nav,.waTop{display:none}.wordmark strong{font-size:27px}.wordmark span{font-size:18px;margin:5px 0 0 12px}.miniCart{width:45px}.infoStrip{margin:7px 8px 0;padding:0 5px;min-height:74px}.infoStrip>div{height:52px;gap:5px;padding:0 4px}.infoStrip svg{width:21px;height:21px}.infoStrip b{font-size:9px}.infoStrip span{font-size:8px}.hero2{height:510px;display:block}.heroCopy{padding:38px 17px 0}.heroCopy h1{font-size:53px}.script{font-size:18px;margin:19px 0 20px}.orderBtn{height:51px;min-width:230px;font-size:16px}.heroFood{position:absolute;left:0;right:0;bottom:0;height:250px}.burgerHero{width:64%;height:88%;left:10%;bottom:-4px}.pizzaHero{width:49%;right:-13%;bottom:-8px}.po1{width:320px;height:33px;left:85px;top:290px}.pv1{width:260px;height:20px;left:-20px;top:137px}.pv2{width:290px;height:25px;right:-90px;top:60px}.po2{width:260px;height:20px;right:-70px;bottom:65px}.promoRow{grid-template-columns:1fr;padding:10px 12px 18px;gap:10px}.promo{height:155px}.promo>div{padding:13px 0 9px 15px}.promo small,.promo strong{font-size:27px}.promo p{font-size:12px}.menuDark{padding:0 12px 25px}.menuHead h2{font-size:37px}.menuTools{flex-direction:column}.search2{width:100%}.productGrid{grid-template-columns:repeat(2,1fr);gap:9px}.productPhoto{height:137px}.productInfo{padding:9px}.productInfo h3{font-size:15px}.productInfo p{font-size:10px}.benefits{margin:0 12px 14px;grid-template-columns:1fr;padding:15px;gap:14px}.benefits>div{justify-content:flex-start}.benefits svg{width:47px;height:47px;padding:10px}footer{padding:20px 18px 95px;gap:14px;flex-direction:column}.floatingWa{right:14px;bottom:84px;width:58px;height:58px}}
+
+/* === FINAL VISUAL OVERRIDE: approved Kenjhi composition === */
+
+/* Restore the real uploaded brand logo in the ONLY allowed place: top-left */
+.brandLockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  min-width:260px!important;
+}
+.brandLockup>img{
+  display:block!important;
+  width:72px!important;
+  height:72px!important;
+  flex:0 0 72px!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  border:2px solid #9d2cff!important;
+  box-shadow:0 0 0 3px #120818,0 0 24px #9d2cff55!important;
+}
+.brandLockup .wordmark strong{
+  font-size:38px!important;
+}
+.brandLockup .wordmark span{
+  font-size:24px!important;
+  margin-left:12px!important;
+}
+
+/* approved reference header proportions */
+.top{
+  min-height:118px!important;
+  grid-template-columns:300px 1fr 330px!important;
+  background:#030304!important;
+  border-bottom:0!important;
+}
+.top nav{
+  gap:29px!important;
+}
+.waTop{
+  border:1px solid #8c2ed0!important;
+  border-radius:24px!important;
+  box-shadow:0 0 22px #8f2dce20!important;
+}
+
+/* the reference uses a wide compact cream service strip */
+.infoStrip{
+  max-width:1240px!important;
+  min-height:84px!important;
+  margin:10px auto 0!important;
+  border-radius:15px!important;
+  box-shadow:none!important;
+}
+
+/* HERO: remove the circular-card look completely */
+.hero2{
+  max-width:1240px!important;
+  height:515px!important;
+  margin:0 auto!important;
+  grid-template-columns:40% 60%!important;
+  background:
+    radial-gradient(ellipse at 72% 45%,#7417a23d 0%,transparent 43%),
+    linear-gradient(180deg,#050506 0%,#020203 100%)!important;
+  overflow:hidden!important;
+}
+.heroCopy{
+  padding:60px 0 0 34px!important;
+  z-index:10!important;
+}
+.heroCopy h1{
+  font-family:'Anton',Impact,sans-serif!important;
+  font-size:78px!important;
+  line-height:.84!important;
+  letter-spacing:-1px!important;
+}
+.heroCopy h1 em{
+  color:#ff6200!important;
+}
+.script{
+  font-family:'Permanent Marker',cursive!important;
+  font-size:25px!important;
+  margin:28px 0 30px!important;
+}
+.orderBtn{
+  min-width:290px!important;
+  height:61px!important;
+  background:linear-gradient(105deg,#791fc8,#b637f4)!important;
+  border:2px solid #dc75ff!important;
+  border-radius:15px!important;
+  box-shadow:0 0 26px #a72fff8c!important;
+}
+
+/* food becomes a poster-style composition rather than two circles */
+.heroFood{
+  position:relative!important;
+  height:515px!important;
+  min-height:515px!important;
+  overflow:visible!important;
+  z-index:7!important;
+}
+.burgerHero{
+  position:absolute!important;
+  left:4%!important;
+  bottom:4px!important;
+  width:64%!important;
+  height:86%!important;
+  object-fit:cover!important;
+  border-radius:0!important;
+  clip-path:none!important;
+  outline:0!important;
+  box-shadow:none!important;
+  filter:saturate(1.24) contrast(1.08) brightness(1.02)!important;
+  -webkit-mask-image:radial-gradient(ellipse 68% 66% at 50% 51%,#000 58%,transparent 88%)!important;
+  mask-image:radial-gradient(ellipse 68% 66% at 50% 51%,#000 58%,transparent 88%)!important;
+  z-index:8!important;
+}
+.pizzaHero{
+  position:absolute!important;
+  right:-8%!important;
+  bottom:-3%!important;
+  width:59%!important;
+  height:84%!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:saturate(1.2) contrast(1.08)!important;
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 54% 52%,#000 54%,transparent 91%)!important;
+  mask-image:radial-gradient(ellipse 72% 70% at 54% 52%,#000 54%,transparent 91%)!important;
+  z-index:6!important;
+}
+
+/* paint is intentionally bold and sits behind the food as in the approved image */
+.paint{
+  z-index:3!important;
+  opacity:1!important;
+  filter:drop-shadow(0 0 10px currentColor)!important;
+}
+.po1{
+  width:590px!important;
+  height:62px!important;
+  left:335px!important;
+  top:165px!important;
+  transform:rotate(-10deg)!important;
+  background:linear-gradient(90deg,#ff4c00,#ff7a00)!important;
+}
+.pv2{
+  width:610px!important;
+  height:50px!important;
+  right:-65px!important;
+  top:50px!important;
+  transform:rotate(11deg)!important;
+  background:linear-gradient(90deg,#6515b1,#a927ef)!important;
+}
+.pv1{
+  width:430px!important;
+  height:28px!important;
+  left:12px!important;
+  top:237px!important;
+  transform:rotate(-5deg)!important;
+  background:linear-gradient(90deg,#7a1ac8,#b42eff)!important;
+}
+.po2{
+  width:500px!important;
+  height:36px!important;
+  right:10px!important;
+  bottom:54px!important;
+  transform:rotate(-11deg)!important;
+  background:linear-gradient(90deg,#ff4e00,#ff7900)!important;
+}
+
+/* promo panels closer to the reference */
+.promoRow{
+  max-width:1240px!important;
+  gap:16px!important;
+  padding:18px 18px 24px!important;
+}
+.promo{
+  height:236px!important;
+  border-radius:14px!important;
+  grid-template-columns:48% 52%!important;
+}
+.promo small,.promo strong{
+  font-size:34px!important;
+}
+.promo img{
+  filter:saturate(1.25) contrast(1.1)!important;
+}
+
+/* menu cards and purple system */
+.menuDark{
+  max-width:1240px!important;
+}
+.productGrid{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.productGrid article{
+  border-color:#8737b2!important;
+  background:#09090c!important;
+}
+.productInfo h3{
+  color:#c64dff!important;
+}
+.productBottom button{
+  background:linear-gradient(135deg,#8b21d5,#b333f1)!important;
+}
+
+/* logo must NOT be repeated anywhere else */
+footer .brandLockup,
+footer .wordmark{
+  display:none!important;
+}
+
+/* mobile gets its own composition; logo remains visible */
+@media(max-width:900px){
+  .top{
+    min-height:82px!important;
+    height:82px!important;
+    grid-template-columns:1fr auto!important;
+    padding:0 12px!important;
+  }
+  .brandLockup{
+    min-width:0!important;
+    gap:7px!important;
+  }
+  .brandLockup>img{
+    display:block!important;
+    width:48px!important;
+    height:48px!important;
+    flex-basis:48px!important;
+  }
+  .brandLockup .wordmark strong{
+    font-size:25px!important;
+  }
+  .brandLockup .wordmark span{
+    font-size:15px!important;
+    margin:5px 0 0 7px!important;
+  }
+  .infoStrip{
+    min-height:72px!important;
+    margin:7px 7px 0!important;
+  }
+  .hero2{
+    height:530px!important;
+    display:block!important;
+  }
+  .heroCopy{
+    padding:38px 17px 0!important;
+  }
+  .heroCopy h1{
+    font-size:54px!important;
+  }
+  .script{
+    font-size:18px!important;
+    margin:20px 0!important;
+  }
+  .orderBtn{
+    min-width:230px!important;
+    height:52px!important;
+    font-size:16px!important;
+  }
+  .heroFood{
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    height:258px!important;
+    min-height:258px!important;
+  }
+  .burgerHero{
+    width:66%!important;
+    height:95%!important;
+    left:5%!important;
+    bottom:-7px!important;
+  }
+  .pizzaHero{
+    width:55%!important;
+    height:92%!important;
+    right:-14%!important;
+    bottom:-8px!important;
+  }
+  .po1{
+    width:330px!important;
+    height:36px!important;
+    left:80px!important;
+    top:300px!important;
+  }
+  .pv2{
+    width:300px!important;
+    height:25px!important;
+    right:-90px!important;
+    top:62px!important;
+  }
+  .pv1{
+    width:270px!important;
+    height:20px!important;
+    left:-24px!important;
+    top:142px!important;
+  }
+  .po2{
+    width:280px!important;
+    height:20px!important;
+    right:-80px!important;
+    bottom:65px!important;
+  }
+  .productGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
