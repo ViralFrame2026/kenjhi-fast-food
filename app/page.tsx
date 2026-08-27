@@ -91,7 +91,9 @@ export default function Page(){
   </main>
 
   <footer id="contacto"><p>© 2026 Kenjhi Fast Food<br/>Todos los derechos reservados.</p><a href="https://www.instagram.com/kenjhi44/" target="_blank"><Instagram size={18}/>@kenjhi44</a></footer>
-  <a className="floatingWa" href="https://wa.me/5493498432943" target="_blank">WA</a>
+  <a className="floatingWa" href="https://wa.me/5493498432943" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 2 131.5 2 253.9c0 44.9 11.7 88.6 33.9 127L0 480l102.3-26.8c37.5 20.5 79.7 31.3 121.6 31.3h.1c122.3 0 224.1-99.5 224.1-221.9 0-59.3-25.2-115-67.2-157.5zM223.9 447.8c-37.3 0-73.8-10-105.6-28.9l-7.6-4.5-60.7 15.9 16.2-59.2-4.9-7.7C40.5 330.3 29.5 292.1 29.5 253.9 29.5 146.7 116.7 59.5 224 59.5c51.9 0 100.7 20.2 137.4 57 36.7 36.7 58.9 85.5 58.9 137.4 0 107.3-89.1 193.9-196.4 193.9zm101.8-145.3c-5.5-2.8-32.8-16.1-37.9-17.9-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 17.9-17.6 21.5c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.6-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.3-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.3 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.8-10.5-6.6z"/></svg>
+  </a>
 
   {count>0&&!drawer&&<button className="stickyCart" onClick={()=>setDrawer(true)}><span><ShoppingCart size={18}/>{count} productos</span><b>{money(total)} →</b></button>}
   {drawer&&<div className="overlay" onMouseDown={()=>setDrawer(false)}><aside onMouseDown={e=>e.stopPropagation()}>
