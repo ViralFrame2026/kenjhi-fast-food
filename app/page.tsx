@@ -45,7 +45,7 @@ export default function Page(){
 
  return <div className="site">
   <header className="top">
-   <a className="wordmark" href="#top"><strong>KENJHI</strong><span>FAST FOOD</span></a>
+   <a className="wordmark wordmarkPaint" href="#top"><i className="logoSlash slashOne"/><i className="logoSlash slashTwo"/><strong>KENJHI</strong><span>FAST FOOD</span></a>
    <nav><a className="activeLink" href="#top">INICIO</a><a href="#menu">MENÚ</a><a href="#destacados">COMBOS</a><a href="#menu">PROMOS</a><a href="#contacto">CONTACTO</a></nav>
    <div className="topActions"><a className="ig" href="https://www.instagram.com/kenjhi44/" target="_blank"><Instagram size={18}/>@kenjhi44</a><button className="miniCart" onClick={()=>setDrawer(true)}><ShoppingCart size={20}/><b>{count}</b></button><a className="waTop" href="https://wa.me/5493498432943" target="_blank"><small>PEDÍ POR WHATSAPP</small><strong>+54 9 3498 432943</strong></a></div>
   </header>
@@ -57,7 +57,7 @@ export default function Page(){
   </section>
 
   <main id="top">
-   <section className="hero2">
+   <section className="hero2"><i className="paint paintViolet pv1"/><i className="paint paintOrange po1"/><i className="paint paintViolet pv2"/><i className="paint paintOrange po2"/>
     <div className="heroCopy">
       <h1>SABORES<br/><em>QUE ENAMORAN</em></h1>
       <p className="script">Hechos con amor, para vos</p>
@@ -90,7 +90,7 @@ export default function Page(){
    <section className="benefits"><div><Star/><p><b>CALIDAD PREMIUM</b><span>Ingredientes frescos y seleccionados.</span></p></div><div><Flame/><p><b>SABOR ÚNICO</b><span>Recetas originales que nos hacen únicos.</span></p></div><div><Heart/><p><b>HECHO CON AMOR</b><span>Para que disfrutes siempre lo mejor.</span></p></div></section>
   </main>
 
-  <footer id="contacto"><div className="wordmark"><strong>KENJHI</strong><span>FAST FOOD</span></div><p>© 2026 Kenjhi Fast Food<br/>Todos los derechos reservados.</p><a href="https://www.instagram.com/kenjhi44/" target="_blank"><Instagram size={18}/>@kenjhi44</a></footer>
+  <footer id="contacto"><div className="wordmark wordmarkPaint"><i className="logoSlash slashOne"/><i className="logoSlash slashTwo"/><strong>KENJHI</strong><span>FAST FOOD</span></div><p>© 2026 Kenjhi Fast Food<br/>Todos los derechos reservados.</p><a href="https://www.instagram.com/kenjhi44/" target="_blank"><Instagram size={18}/>@kenjhi44</a></footer>
   <a className="floatingWa" href="https://wa.me/5493498432943" target="_blank">WA</a>
 
   {count>0&&!drawer&&<button className="stickyCart" onClick={()=>setDrawer(true)}><span><ShoppingCart size={18}/>{count} productos</span><b>{money(total)} →</b></button>}
