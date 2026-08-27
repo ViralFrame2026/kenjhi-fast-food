@@ -1159,3 +1159,29 @@ footer{max-width:1024px!important}
     object-fit:contain!important;
   }
 }
+
+
+/* OFFICIAL KENJHI LOGO — top-left only */
+.brandLockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+}
+.brandLockup>img{
+  display:block!important;
+  width:72px!important;
+  height:72px!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  flex:0 0 72px!important;
+  border:2px solid #9f2bea!important;
+  box-shadow:0 0 14px rgba(166,43,234,.6)!important;
+}
+@media(max-width:900px){
+  .brandLockup{gap:8px!important}
+  .brandLockup>img{
+    width:58px!important;
+    height:58px!important;
+    flex-basis:58px!important;
+  }
+}
