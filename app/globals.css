@@ -994,3 +994,136 @@ footer{max-width:1024px!important}
   .pv2{right:-18%!important;top:28px!important;width:200px!important;height:70px!important}
   .po2{right:-10%!important;bottom:12px!important;width:205px!important;height:60px!important}
 }
+
+
+/* FINAL HERO MATCH — transparent food, clean approved-banner composition */
+.hero2{
+  position:relative!important;
+  max-width:1024px!important;
+  height:390px!important;
+  margin:0 auto 18px!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-columns:42% 58%!important;
+  background:
+    radial-gradient(circle at 84% 18%,rgba(126,23,204,.16),transparent 22%),
+    linear-gradient(180deg,#020203 0%,#070408 100%)!important;
+  border-radius:0!important;
+}
+.hero2:before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:
+    radial-gradient(circle at 16% 22%,rgba(185,58,255,.16),transparent 20%),
+    radial-gradient(circle at 74% 67%,rgba(255,92,0,.12),transparent 24%)!important;
+  z-index:0!important;
+}
+.heroCopy{
+  position:relative!important;
+  z-index:20!important;
+  padding:48px 0 0 46px!important;
+}
+.heroCopy h1{
+  margin:0!important;
+  color:#fff!important;
+  font-family:'Permanent Marker',cursive!important;
+  font-size:52px!important;
+  line-height:.92!important;
+  letter-spacing:-2px!important;
+  text-transform:uppercase!important;
+  transform:rotate(-1.5deg)!important;
+}
+.heroCopy h1 em{
+  display:block!important;
+  color:#ff5a00!important;
+  font-family:'Permanent Marker',cursive!important;
+  font-style:normal!important;
+  text-shadow:2px 2px 0 rgba(68,17,0,.9)!important;
+}
+.script{
+  margin:18px 0 20px!important;
+  color:#fff!important;
+  font-size:20px!important;
+  transform:rotate(-2deg)!important;
+}
+.orderBtn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:250px!important;
+  height:54px!important;
+  border-radius:12px!important;
+  font-weight:900!important;
+  background:linear-gradient(90deg,#8321bd,#c92cff)!important;
+  box-shadow:0 0 16px rgba(198,44,255,.75)!important;
+}
+.heroFood{
+  position:relative!important;
+  z-index:10!important;
+  height:390px!important;
+  overflow:visible!important;
+}
+.burgerHero,.pizzaHero{
+  position:absolute!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+}
+.burgerHero{
+  width:60%!important;
+  height:92%!important;
+  left:2%!important;
+  bottom:-2%!important;
+  z-index:18!important;
+  filter:saturate(1.08) contrast(1.07) drop-shadow(0 18px 18px rgba(0,0,0,.55))!important;
+}
+.pizzaHero{
+  width:53%!important;
+  height:72%!important;
+  right:-5%!important;
+  bottom:-1%!important;
+  z-index:17!important;
+  transform:rotate(9deg)!important;
+  filter:saturate(1.07) contrast(1.06) drop-shadow(0 16px 18px rgba(0,0,0,.5))!important;
+}
+.paint{
+  position:absolute!important;
+  display:block!important;
+  pointer-events:none!important;
+  z-index:5!important;
+  opacity:1!important;
+  clip-path:polygon(0 42%,64% 26%,86% 0,79% 29%,100% 20%,82% 48%,98% 55%,75% 61%,91% 88%,60% 69%,24% 77%)!important;
+}
+.paintViolet{background:linear-gradient(90deg,#6510a4,#b929f1)!important}
+.paintOrange{background:linear-gradient(90deg,#ff4200,#ff7900)!important}
+.pv1{left:29%!important;top:246px!important;width:300px!important;height:66px!important;transform:rotate(-7deg)!important}
+.po1{left:48%!important;top:54px!important;width:330px!important;height:82px!important;transform:rotate(-13deg)!important}
+.pv2{right:-4%!important;top:30px!important;width:260px!important;height:72px!important;transform:rotate(10deg)!important}
+.po2{right:-1%!important;bottom:20px!important;width:280px!important;height:70px!important;transform:rotate(-8deg)!important}
+
+@media(max-width:900px){
+  .hero2{
+    height:400px!important;
+    grid-template-columns:45% 55%!important;
+  }
+  .heroCopy{padding:38px 0 0 18px!important}
+  .heroCopy h1{font-size:35px!important;line-height:.93!important}
+  .script{font-size:13px!important;margin:16px 0 18px!important;white-space:nowrap!important}
+  .orderBtn{min-width:170px!important;height:46px!important;font-size:12px!important}
+  .heroFood{height:400px!important}
+  .burgerHero{
+    width:78%!important;height:78%!important;left:-8%!important;bottom:4%!important
+  }
+  .pizzaHero{
+    width:70%!important;height:59%!important;right:-17%!important;bottom:4%!important;transform:rotate(8deg)!important
+  }
+  .pv1{left:22%!important;top:230px!important;width:190px!important;height:52px!important}
+  .po1{left:44%!important;top:76px!important;width:220px!important;height:58px!important}
+  .pv2{right:-15%!important;top:38px!important;width:170px!important;height:50px!important}
+  .po2{right:-10%!important;bottom:30px!important;width:190px!important;height:52px!important}
+}
