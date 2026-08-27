@@ -375,3 +375,294 @@ footer a{font-size:12px}
   footer{padding:15px 18px 90px;gap:14px;flex-direction:column}
   .floatingWa{right:15px;bottom:82px;width:58px;height:58px}
 }
+
+
+/* =========================================================
+   VISUAL MATCH PATCH v4 — reference image is the authority
+   This patch changes ONLY presentation. It deliberately keeps
+   the hero food unobstructed and preserves the 3-card layout
+   even on narrow screens so the composition matches reference.
+   ========================================================= */
+
+/* 1) Header and overall canvas proportions */
+.top{
+  max-width:1024px!important;
+  height:138px!important;
+  min-height:138px!important;
+  padding:0 24px!important;
+  grid-template-columns:220px 1fr 260px!important;
+  gap:10px!important;
+}
+.wordmark strong{font-size:44px!important}
+.wordmark span{font-size:27px!important}
+.top nav{gap:27px!important}
+.top nav a{font-size:14px!important}
+.waTop{min-width:210px!important;padding:10px 15px!important}
+.waTop strong{font-size:16px!important}
+
+.infoStrip{
+  max-width:996px!important;
+  width:calc(100% - 28px)!important;
+  min-height:76px!important;
+  margin:0 auto!important;
+  border-radius:14px!important;
+}
+.infoStrip>div{height:54px!important}
+.infoStrip b{font-size:14px!important}
+.infoStrip span{font-size:13px!important}
+
+/* 2) Hero: exact same two-column poster composition */
+.hero2{
+  max-width:1024px!important;
+  height:414px!important;
+  grid-template-columns:40% 60%!important;
+  overflow:hidden!important;
+}
+.heroCopy{
+  padding:48px 0 0 48px!important;
+  z-index:20!important;
+}
+.heroCopy h1{
+  font-size:72px!important;
+  line-height:.84!important;
+}
+.script{
+  margin:25px 0 27px 0!important;
+  font-size:24px!important;
+}
+.orderBtn{
+  margin-left:0!important;
+  min-width:252px!important;
+  height:58px!important;
+  font-size:18px!important;
+}
+
+/* The food MUST sit beside the slogan, never below it */
+.heroFood{
+  position:relative!important;
+  height:414px!important;
+  min-height:414px!important;
+  overflow:visible!important;
+  z-index:8!important;
+}
+.burgerHero{
+  left:1%!important;
+  bottom:0!important;
+  width:61%!important;
+  height:92%!important;
+  z-index:12!important;
+  clip-path:none!important;
+  border-radius:0!important;
+  -webkit-mask-image:radial-gradient(ellipse 68% 68% at 50% 54%,#000 61%,transparent 91%)!important;
+  mask-image:radial-gradient(ellipse 68% 68% at 50% 54%,#000 61%,transparent 91%)!important;
+}
+.pizzaHero{
+  right:-12%!important;
+  bottom:-6%!important;
+  width:61%!important;
+  height:82%!important;
+  z-index:11!important;
+  border-radius:0!important;
+  -webkit-mask-image:radial-gradient(ellipse 72% 72% at 52% 53%,#000 58%,transparent 92%)!important;
+  mask-image:radial-gradient(ellipse 72% 72% at 52% 53%,#000 58%,transparent 92%)!important;
+}
+
+/* IMPORTANT: paint strokes stay BEHIND food and text. They must never cover images. */
+.paint{z-index:2!important;opacity:.92!important;filter:none!important}
+.pv1{left:14px!important;top:227px!important;width:350px!important;height:18px!important}
+.po1{left:360px!important;top:105px!important;width:460px!important;height:43px!important}
+.pv2{right:-35px!important;top:37px!important;width:445px!important;height:34px!important}
+.po2{right:10px!important;bottom:36px!important;width:380px!important;height:26px!important}
+
+/* 3) Promo cards stay 3 across exactly like reference */
+.promoRow{
+  max-width:1024px!important;
+  padding:18px 24px 22px!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+}
+.promo{
+  height:244px!important;
+  grid-template-columns:47% 53%!important;
+}
+.promo>div{padding:18px 0 12px 22px!important}
+.promo small,.promo strong{font-size:32px!important}
+.promo p{font-size:13px!important}
+.promo b{width:31px!important;height:31px!important}
+.promo:after{z-index:2!important}
+.promo img{position:relative!important;z-index:3!important}
+
+/* 4) Menu reference dimensions */
+.menuDark{
+  max-width:1024px!important;
+  padding:0 18px 30px!important;
+}
+.menuHead h2{font-size:40px!important}
+.menuTools{margin:10px 0 17px!important}
+.chips2{gap:8px!important}
+.chips2 button{padding:8px 12px!important;font-size:12px!important}
+.productGrid{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:9px!important;
+}
+.productGrid article{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:278px!important;
+}
+.productPhoto{height:139px!important;min-height:139px!important}
+.productInfo{padding:9px 10px 10px!important}
+.productInfo h3{font-size:15px!important}
+.productInfo p{
+  display:block!important;
+  min-height:56px!important;
+  font-size:9.5px!important;
+  line-height:1.45!important;
+}
+.productBottom strong{font-size:24px!important}
+.productBottom button{width:32px!important;height:32px!important}
+
+.benefits{
+  max-width:988px!important;
+  margin:0 auto 12px!important;
+  padding:17px 20px!important;
+}
+footer{max-width:1024px!important}
+
+/* 5) Narrow screens: preserve the SAME composition rather than redesigning it */
+@media(max-width:900px){
+  .site{
+    min-width:0!important;
+    width:100%!important;
+  }
+  .top{
+    max-width:none!important;
+    width:100%!important;
+    height:88px!important;
+    min-height:88px!important;
+    padding:0 16px!important;
+    grid-template-columns:1fr auto!important;
+  }
+  .top nav,.waTop{display:none!important}
+  .wordmark strong{font-size:32px!important}
+  .wordmark span{font-size:18px!important;margin-top:6px!important}
+
+  .infoStrip{
+    width:calc(100% - 18px)!important;
+    min-height:78px!important;
+    padding:0 4px!important;
+  }
+  .infoStrip>div{
+    height:56px!important;
+    gap:5px!important;
+    padding:0 3px!important;
+  }
+  .infoStrip svg{width:22px!important;height:22px!important}
+  .infoStrip b{font-size:9px!important}
+  .infoStrip span{font-size:8px!important}
+
+  .hero2{
+    width:100%!important;
+    height:350px!important;
+    display:grid!important;
+    grid-template-columns:43% 57%!important;
+  }
+  .heroCopy{
+    width:auto!important;
+    padding:42px 0 0 20px!important;
+  }
+  .heroCopy h1{font-size:45px!important}
+  .script{
+    font-size:15px!important;
+    margin:18px 0 18px!important;
+    white-space:nowrap!important;
+  }
+  .orderBtn{
+    min-width:185px!important;
+    height:48px!important;
+    font-size:14px!important;
+  }
+  .heroFood{
+    position:relative!important;
+    inset:auto!important;
+    height:350px!important;
+    min-height:350px!important;
+  }
+  .burgerHero{
+    left:-2%!important;
+    bottom:5px!important;
+    width:69%!important;
+    height:89%!important;
+  }
+  .pizzaHero{
+    right:-20%!important;
+    bottom:0!important;
+    width:67%!important;
+    height:73%!important;
+  }
+  .pv1{left:-8px!important;top:198px!important;width:235px!important;height:15px!important}
+  .po1{left:38%!important;top:99px!important;width:300px!important;height:28px!important}
+  .pv2{right:-75px!important;top:36px!important;width:270px!important;height:22px!important}
+  .po2{right:-50px!important;bottom:40px!important;width:220px!important;height:16px!important}
+
+  /* three promo cards remain side by side, matching reference */
+  .promoRow{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:7px!important;
+    padding:10px 8px 15px!important;
+  }
+  .promo{
+    height:145px!important;
+    grid-template-columns:50% 50%!important;
+    border-radius:8px!important;
+  }
+  .promo>div{padding:10px 0 8px 10px!important}
+  .promo small,.promo strong{font-size:18px!important}
+  .promo p{font-size:8px!important}
+  .promo b{width:22px!important;height:22px!important;font-size:13px!important}
+  .promo:after{height:15px!important}
+  .promo img{object-fit:cover!important}
+
+  .menuDark{padding:0 8px 22px!important}
+  .menuHead h2{font-size:32px!important}
+  .menuHead span{width:95px!important}
+  .menuHead button{font-size:11px!important}
+  .menuTools{overflow:hidden!important}
+  .chips2{gap:5px!important}
+  .chips2 button{padding:7px 9px!important;font-size:9px!important}
+
+  /* Reference has six cards in one row; keep that visual on phone too */
+  .productGrid{
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
+    gap:4px!important;
+  }
+  .productGrid article{
+    min-height:205px!important;
+    border-radius:7px!important;
+  }
+  .productPhoto{height:92px!important;min-height:92px!important}
+  .productInfo{padding:6px!important}
+  .productInfo h3{font-size:8px!important;margin-bottom:4px!important}
+  .productInfo p{
+    min-height:48px!important;
+    font-size:6.3px!important;
+    line-height:1.35!important;
+  }
+  .productBottom strong{font-size:12px!important}
+  .productBottom button{width:20px!important;height:20px!important}
+  .productBottom button svg{width:12px!important;height:12px!important}
+
+  .benefits{
+    margin:0 8px 8px!important;
+    grid-template-columns:repeat(3,1fr)!important;
+    gap:6px!important;
+    padding:10px 8px!important;
+  }
+  .benefits>div{justify-content:center!important;gap:7px!important}
+  .benefits svg{width:34px!important;height:34px!important;padding:7px!important}
+  .benefits b{font-size:9px!important}
+  .benefits span{font-size:7px!important}
+
+  footer{padding:12px 10px 80px!important;flex-direction:row!important;gap:20px!important}
+  footer p{font-size:8px!important}
+}
