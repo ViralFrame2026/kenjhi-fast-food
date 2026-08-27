@@ -1229,3 +1229,36 @@ body,.page{background-color:#000!important}
    mask-image:linear-gradient(to right,transparent 0,#000 2%,#000 98%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 3%,#000 97%,transparent 100%)!important;
  }
 }
+
+
+/* KENJHI TYPOGRAPHY SYSTEM — brush identity + readable menu */
+:root{
+  --font-brand:'Permanent Marker','Arial Black',sans-serif;
+  --font-display:'Anton','Impact','Arial Narrow',sans-serif;
+}
+body,.page{
+  font-family:var(--font-display)!important;
+  letter-spacing:.15px;
+}
+.logoText,.logoText b,.logoText span,
+.sectionTitle,
+.aboutKenjhi h2,.locationBlock h2{
+  font-family:var(--font-brand)!important;
+  font-weight:400!important;
+  letter-spacing:.5px!important;
+}
+.nav a,.infoStrip b,.orderBtn,
+.categoryTabs button,.seeAll,
+.card h3,.card .price,
+.benefits b,.allergyNotice strong,
+.cartBar,.locationBlock a{
+  font-family:var(--font-display)!important;
+}
+.card p,.benefits span,.aboutKenjhi p,.locationBlock p,.allergyNotice span{
+  font-family:'Arial Narrow',Arial,sans-serif!important;
+}
+.sectionTitle{
+  text-transform:uppercase;
+  transform:rotate(-1deg);
+  transform-origin:left center;
+}
