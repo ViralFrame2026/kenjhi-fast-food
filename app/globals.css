@@ -1203,3 +1203,29 @@ footer{max-width:1024px!important}
  .allergyNotice{padding:13px 10px}.allergyNotice strong{font-size:13px}.allergyNotice span{font-size:10px}
  .locationBlock{grid-template-columns:1fr}.locationBlock>div{padding:20px}.locationBlock iframe{min-height:250px}
 }
+
+
+/* HERO SEAMLESS BACKGROUND — blend approved banner into page */
+.approvedHero{
+  position:relative!important;
+  background:#000!important;
+  overflow:visible!important;
+  box-shadow:0 0 70px 45px #000!important;
+}
+.approvedHero img{
+  display:block!important;
+  background:#000!important;
+  mix-blend-mode:normal!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 95%,transparent 100%)!important;
+  -webkit-mask-composite:source-in!important;
+  mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 95%,transparent 100%)!important;
+  mask-composite:intersect!important;
+}
+body,.page{background-color:#000!important}
+@media(max-width:900px){
+ .approvedHero{box-shadow:0 0 35px 22px #000!important}
+ .approvedHero img{
+   -webkit-mask-image:linear-gradient(to right,transparent 0,#000 2%,#000 98%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 3%,#000 97%,transparent 100%)!important;
+   mask-image:linear-gradient(to right,transparent 0,#000 2%,#000 98%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 3%,#000 97%,transparent 100%)!important;
+ }
+}
