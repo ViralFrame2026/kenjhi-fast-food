@@ -20,3 +20,205 @@
 .search2:focus-within{border-color:var(--purple);box-shadow:0 0 0 2px #7c3aed22}
 .stickyCart{border-color:#65349b}.stickyCart b{color:#c084fc}
 @media(max-width:800px){.hero2{background:radial-gradient(circle at 80% 65%,#6d28d933,transparent 32%),linear-gradient(#0b0b0b,#090909)}}
+
+/* Approved Kenjhi neon-violet visual pass */
+:root{
+  --violet:#9b30ff;
+  --violet2:#c13cff;
+  --violetDeep:#54138f;
+  --orange:#ff6a00;
+  --ink:#050507;
+}
+.top{
+  background:
+    radial-gradient(circle at 18% 0%,#6f1eb522,transparent 25%),
+    linear-gradient(180deg,#050506,#070709);
+  border-bottom:1px solid #7b2abf55;
+}
+.wordmark{
+  min-width:190px;
+  position:relative;
+}
+.wordmark strong{
+  color:#fff;
+  font-size:34px;
+  font-weight:1000;
+  letter-spacing:.015em;
+  transform:skew(-5deg);
+  text-shadow:2px 2px 0 #202020,0 0 20px #8b2fff20;
+}
+.wordmark span{
+  color:#ff7410;
+  background:none;
+  -webkit-background-clip:initial;
+  background-clip:initial;
+  font-size:19px;
+  text-shadow:0 0 14px #ff6a0030;
+}
+.top nav .activeLink:after,.top nav a:hover:after{
+  background:linear-gradient(90deg,var(--violet2),var(--orange));
+  box-shadow:0 0 12px #a855f766;
+}
+.waTop{
+  border-color:#7e2fbd;
+  background:linear-gradient(180deg,#0d0a12,#08080a);
+  box-shadow:inset 0 0 24px #7519b414,0 0 18px #8b2fff18;
+}
+.waTop small{color:#c65cff}
+.infoStrip{
+  background:#f7f0e6;
+  box-shadow:inset 0 -2px 0 #9b30ff55;
+}
+.infoStrip svg{stroke:#9b30ff}
+.hero2{
+  background:
+    radial-gradient(circle at 72% 24%,#8f2cff35,transparent 24%),
+    radial-gradient(circle at 28% 80%,#5a0d8e26,transparent 28%),
+    linear-gradient(180deg,#08080a,#050506);
+}
+.hero2:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(165deg,transparent 0 28%,#8f2cff66 29% 30%,transparent 31% 100%),
+    linear-gradient(170deg,transparent 0 63%,#ff6a0070 64% 65%,transparent 66% 100%);
+  opacity:.35;
+}
+.heroCopy{z-index:3}
+.heroCopy h1 em{
+  color:var(--orange);
+  background:none;
+  -webkit-background-clip:initial;
+  background-clip:initial;
+}
+.heroCopy h1{
+  text-shadow:0 0 28px #6d28d91d;
+}
+.script{color:#f8f8f8}
+.orderBtn{
+  background:linear-gradient(110deg,#7e22ce,#b832ff);
+  color:#fff;
+  border:1px solid #d870ff;
+  box-shadow:0 0 0 1px #b732ff44,0 0 22px #9b30ff66,0 12px 34px #0008;
+}
+.orderBtn:hover{filter:brightness(1.08)}
+.heroFood:before{
+  background:linear-gradient(100deg,#8b2cff,#ff6a00 68%);
+  opacity:.92;
+}
+.burgerHero,.pizzaHero{
+  outline:1px solid #8e3cff33;
+}
+.promo{
+  background:linear-gradient(180deg,#0d0d10,#080809);
+}
+.promo.purple{
+  border-color:#b53cff;
+  box-shadow:inset 0 0 34px #9b30ff20,0 0 18px #9b30ff12;
+}
+.promo.purple strong{color:#bc46ff}
+.promo.orange{
+  border-color:#ff6a00;
+  box-shadow:inset 0 0 30px #ff6a0017;
+}
+.promo.pink{
+  border-color:#c43cff;
+  box-shadow:inset 0 0 34px #9b30ff18;
+}
+.promo.pink strong{color:#b83cff}
+.promo b{
+  width:30px;height:30px;border-radius:50%;
+  background:#9b30ff;
+  color:#fff;
+  display:grid;place-items:center;
+}
+.menuHead span{
+  background:linear-gradient(90deg,#a52fff 0 68%,#ff6a00);
+  box-shadow:0 0 12px #a52fff55;
+}
+.menuHead button{color:#c95cff}
+.chips2 button{
+  border-color:#29222f;
+}
+.chips2 button.sel{
+  background:linear-gradient(135deg,#8e22d8,#b733ff);
+  border-color:#b844ff;
+  box-shadow:0 0 16px #a52fff44;
+}
+.search2:focus-within{
+  border-color:#9d37e4;
+  box-shadow:0 0 0 2px #9d37e422;
+}
+.productGrid article{
+  border-color:#7035a4;
+  box-shadow:0 0 0 1px #8f39c812,inset 0 0 24px #68208d0b;
+}
+.productGrid article:hover{
+  border-color:#c14bff;
+  box-shadow:0 10px 30px #6d28d922,0 0 18px #a855f722;
+}
+.productInfo small{color:#bb7be3}
+.productInfo h3{color:#c45cff}
+.productBottom strong{color:#ff6a00}
+.productBottom button{
+  background:linear-gradient(135deg,#8726d0,#b839ff);
+  box-shadow:0 0 14px #9b30ff35;
+}
+.benefits{
+  border:1px solid #7439a5;
+  border-radius:14px;
+  margin-top:18px;
+  background:linear-gradient(180deg,#0b0a0e,#080809);
+  box-shadow:inset 0 0 30px #6b1fa411;
+}
+.benefits svg{
+  stroke:#bf52ff;
+  border-color:#a23ce4;
+  box-shadow:0 0 14px #8f2fff28;
+}
+footer{
+  border-top:1px solid #6d2b9748;
+}
+footer .wordmark strong{font-size:28px}
+.floatingWa{
+  background:#20c85a;
+  border:2px solid #73ff9e;
+}
+.stickyCart{
+  border-color:#5c2d77;
+  background:linear-gradient(180deg,#111014,#0a090c);
+  box-shadow:0 0 25px #6d28d91e;
+}
+.stickyCart b{color:#ff7410}
+.overlay aside{
+  background:linear-gradient(180deg,#0d0b10,#09090b);
+  border-left:1px solid #6b278f;
+}
+.checkout{
+  background:linear-gradient(135deg,#7d23c8,#a93bf3);
+  color:#fff;
+  box-shadow:0 0 18px #9b30ff33;
+}
+@media(max-width:800px){
+  .top{height:82px}
+  .wordmark{min-width:145px}
+  .wordmark strong{font-size:27px}
+  .wordmark span{font-size:15px}
+  .infoStrip{padding:8px 18px}
+  .infoStrip>div{padding:10px 0}
+  .hero2{
+    background:
+      radial-gradient(circle at 75% 30%,#8a2fff36,transparent 25%),
+      radial-gradient(circle at 20% 85%,#5b128e2d,transparent 25%),
+      linear-gradient(180deg,#08080a,#050506);
+  }
+  .heroCopy{padding-top:48px}
+  .heroCopy h1{font-size:54px}
+  .orderBtn{
+    box-shadow:0 0 22px #9b30ff70;
+  }
+  .promoRow{padding-top:14px}
+  .productGrid article{border-color:#7336a5}
+}
