@@ -1127,3 +1127,35 @@ footer{max-width:1024px!important}
   .pv2{right:-15%!important;top:38px!important;width:170px!important;height:50px!important}
   .po2{right:-10%!important;bottom:30px!important;width:190px!important;height:52px!important}
 }
+
+
+/* APPROVED HERO BANNER — exact uploaded artwork */
+.approvedHero{
+  display:block!important;
+  width:min(1024px,100%)!important;
+  margin:0 auto 18px!important;
+  background:#000!important;
+  overflow:hidden!important;
+  text-decoration:none!important;
+}
+.approvedHero img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:16/9!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#000!important;
+}
+@media(max-width:900px){
+  .approvedHero{
+    width:100%!important;
+    margin-bottom:18px!important;
+  }
+  .approvedHero img{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16/9!important;
+    object-fit:contain!important;
+  }
+}
