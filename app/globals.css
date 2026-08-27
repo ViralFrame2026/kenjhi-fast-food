@@ -666,3 +666,167 @@ footer{max-width:1024px!important}
   footer{padding:12px 10px 80px!important;flex-direction:row!important;gap:20px!important}
   footer p{font-size:8px!important}
 }
+
+
+/* =========================================================
+   PAINT EXPLOSION PATCH — replace straight color slashes
+   with splattered orange/violet paint, behind the food.
+   ========================================================= */
+
+.paint{
+  opacity:1!important;
+  filter:none!important;
+  border-radius:46% 54% 58% 42% / 43% 48% 52% 57%!important;
+  clip-path:none!important;
+  overflow:visible!important;
+  z-index:1!important;
+}
+.paint::before,
+.paint::after{
+  content:""!important;
+  position:absolute!important;
+  pointer-events:none!important;
+  border-radius:50%!important;
+}
+.paintViolet{
+  background:
+    radial-gradient(circle at 18% 38%,#b42cff 0 12%,transparent 13%),
+    radial-gradient(circle at 37% 24%,#8e20dc 0 18%,transparent 19%),
+    radial-gradient(circle at 56% 52%,#a328ef 0 28%,transparent 29%),
+    radial-gradient(circle at 78% 44%,#6d11b4 0 16%,transparent 17%),
+    radial-gradient(circle at 88% 67%,#c43bff 0 7%,transparent 8%)!important;
+}
+.paintOrange{
+  background:
+    radial-gradient(circle at 16% 52%,#ff4d00 0 15%,transparent 16%),
+    radial-gradient(circle at 36% 34%,#ff6a00 0 24%,transparent 25%),
+    radial-gradient(circle at 59% 50%,#ff5a00 0 30%,transparent 31%),
+    radial-gradient(circle at 79% 37%,#ff7a00 0 17%,transparent 18%),
+    radial-gradient(circle at 91% 66%,#ff3d00 0 8%,transparent 9%)!important;
+}
+.paintViolet::before{
+  width:18px!important;height:18px!important;
+  left:4%!important;top:-16%!important;
+  background:#a52cec!important;
+  box-shadow:
+    32px -12px 0 -5px #7a18c9,
+    78px 14px 0 -7px #bd35ff,
+    144px -18px 0 -6px #8a1fda,
+    208px 8px 0 -7px #b52eff,
+    262px -9px 0 -8px #7613bf!important;
+}
+.paintViolet::after{
+  width:11px!important;height:11px!important;
+  right:8%!important;bottom:-18%!important;
+  background:#8e1bd8!important;
+  box-shadow:
+    -42px 15px 0 -3px #c23cff,
+    -96px -7px 0 -4px #7b17c8,
+    -158px 18px 0 -4px #a82bea!important;
+}
+.paintOrange::before{
+  width:19px!important;height:19px!important;
+  left:5%!important;top:-14%!important;
+  background:#ff6400!important;
+  box-shadow:
+    44px -10px 0 -6px #ff4300,
+    103px 18px 0 -7px #ff7b00,
+    175px -14px 0 -5px #ff5600,
+    238px 10px 0 -7px #ff7200!important;
+}
+.paintOrange::after{
+  width:12px!important;height:12px!important;
+  right:5%!important;bottom:-16%!important;
+  background:#ff5000!important;
+  box-shadow:
+    -48px 16px 0 -3px #ff7a00,
+    -112px -8px 0 -4px #ff4e00,
+    -176px 18px 0 -4px #ff6500!important;
+}
+
+/* Reposition splashes so they frame the hero instead of crossing food */
+.pv1{
+  width:330px!important;height:118px!important;
+  left:-20px!important;top:180px!important;
+  transform:rotate(-8deg)!important;
+}
+.po1{
+  width:460px!important;height:150px!important;
+  left:365px!important;top:54px!important;
+  transform:rotate(-8deg)!important;
+}
+.pv2{
+  width:430px!important;height:130px!important;
+  right:-65px!important;top:6px!important;
+  transform:rotate(7deg)!important;
+}
+.po2{
+  width:390px!important;height:110px!important;
+  right:-25px!important;bottom:6px!important;
+  transform:rotate(-7deg)!important;
+}
+
+/* Keep hero food and copy above all paint */
+.heroCopy{z-index:20!important}
+.heroFood{z-index:12!important}
+.burgerHero{z-index:15!important}
+.pizzaHero{z-index:14!important}
+
+/* Promo paint: no diagonal bars across product photos */
+.promo:after{
+  width:72%!important;
+  height:90%!important;
+  right:-18%!important;
+  top:5%!important;
+  transform:none!important;
+  clip-path:none!important;
+  z-index:1!important;
+  border-radius:50%!important;
+  opacity:.75!important;
+  background:
+    radial-gradient(circle at 30% 45%,#8e20d4 0 18%,transparent 19%),
+    radial-gradient(circle at 52% 38%,#b52cff 0 28%,transparent 29%),
+    radial-gradient(circle at 76% 57%,#6e12b4 0 15%,transparent 16%),
+    radial-gradient(circle at 88% 28%,#c23cff 0 7%,transparent 8%)!important;
+}
+.promo.orange:after{
+  background:
+    radial-gradient(circle at 30% 45%,#ff4d00 0 18%,transparent 19%),
+    radial-gradient(circle at 52% 38%,#ff6900 0 28%,transparent 29%),
+    radial-gradient(circle at 76% 57%,#ff5200 0 15%,transparent 16%),
+    radial-gradient(circle at 88% 28%,#ff8200 0 7%,transparent 8%)!important;
+}
+.promo img{z-index:3!important}
+.promo>div{z-index:4!important}
+
+/* Actual WhatsApp mark in the floating button */
+.floatingWa{
+  font-size:0!important;
+  background:#20c65a!important;
+  color:#fff!important;
+  border:2px solid #92ffb6!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 18px rgba(32,198,90,.25)!important;
+}
+.floatingWa svg{
+  width:34px!important;
+  height:34px!important;
+  display:block!important;
+}
+
+@media(max-width:900px){
+  .pv1{width:220px!important;height:88px!important;left:-35px!important;top:170px!important}
+  .po1{width:280px!important;height:105px!important;left:39%!important;top:70px!important}
+  .pv2{width:250px!important;height:90px!important;right:-85px!important;top:8px!important}
+  .po2{width:230px!important;height:80px!important;right:-70px!important;bottom:2px!important}
+
+  .promo:after{
+    width:82%!important;
+    height:96%!important;
+    right:-28%!important;
+    top:2%!important;
+  }
+  .floatingWa svg{
+    width:31px!important;
+    height:31px!important;
+  }
+}
