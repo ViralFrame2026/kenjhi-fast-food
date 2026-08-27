@@ -79,6 +79,19 @@ export default function Page(){
     </article>})}</div>
    </section>
 
+   <section className="importantInfo">
+    <div className="aboutKenjhi">
+      <h2>ACERCA DE KENJHI</h2>
+      <p>Somos una roticería de San Justo, Santa Fe, apasionada por la buena comida y la atención personalizada. En Kenjhi nos esforzamos cada día para ofrecerte productos frescos, sabrosos y con la mejor calidad.</p>
+      <p><b>Horarios de atención:</b> Miércoles a Domingo de 20:00 a 23:30 hs.</p>
+    </div>
+    <div className="allergyNotice"><strong>⚠️ SI SUFRÍS ALGUNA ALERGIA ALIMENTARIA</strong><span>Nueces, morrón/pimientos, quesos, salsas u otros ingredientes: avisanos antes de pedir así podemos recomendarte la opción más adecuada para vos.</span></div>
+    <div className="locationBlock">
+      <div><h2>ENCONTRANOS</h2><p>Estanislao López 2779 · San Justo, Santa Fe</p><a href="https://www.google.com/maps/search/?api=1&query=Estanislao+Lopez+2779+San+Justo+Santa+Fe" target="_blank" rel="noreferrer">ABRIR EN GOOGLE MAPS →</a></div>
+      <iframe title="Mapa Kenjhi Fast Food" src="https://www.google.com/maps?q=Estanislao%20Lopez%202779%2C%20San%20Justo%2C%20Santa%20Fe&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+   </section>
+
    <section className="benefits"><div><Star/><p><b>CALIDAD PREMIUM</b><span>Ingredientes frescos y seleccionados.</span></p></div><div><Flame/><p><b>SABOR ÚNICO</b><span>Recetas originales que nos hacen únicos.</span></p></div><div><Heart/><p><b>HECHO CON AMOR</b><span>Para que disfrutes siempre lo mejor.</span></p></div></section>
   </main>
 
