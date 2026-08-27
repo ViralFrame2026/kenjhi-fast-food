@@ -64,8 +64,8 @@ export default function Page(){
       <a className="orderBtn" href="#menu">HACÉ TU PEDIDO</a>
     </div>
     <div className="heroFood">
-      <img className="burgerHero" src={catImg.hamburguesas} alt="Hamburguesa Kenjhi"/>
-      <img className="pizzaHero" src={catImg.pizzas} alt="Pizza Kenjhi"/>
+      <img className="burgerHero" src="https://images.unsplash.com/photo-1692737347720-90de4c1862d6?auto=format&fit=crop&w=1400&q=92" alt="Hamburguesa gourmet Kenjhi"/>
+      <img className="pizzaHero" src="https://images.unsplash.com/photo-1777891257674-36c5532e6654?auto=format&fit=crop&w=1400&q=92" alt="Pizza pepperoni Kenjhi"/>
     </div>
    </section>
 
