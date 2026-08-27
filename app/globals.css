@@ -1262,3 +1262,57 @@ body,.page{
   transform:rotate(-1deg);
   transform-origin:left center;
 }
+
+
+/* TYPOGRAPHY + HERO SPACING FIX v2 */
+body,.page,
+.nav a,.infoStrip,.infoStrip b,.infoStrip span,
+.categoryTabs button,.seeAll,
+.card h3,.card p,.card .price,
+.benefits b,.benefits span,
+.aboutKenjhi h2,.aboutKenjhi p,
+.locationBlock h2,.locationBlock p,.locationBlock a,
+.allergyNotice strong,.allergyNotice span,
+.cartBar,.cartBar *{
+  font-family:'Permanent Marker','Arial Black',sans-serif!important;
+}
+.card p,.benefits span,.aboutKenjhi p,.locationBlock p,.allergyNotice span{
+  font-size:.92em!important;
+  line-height:1.35!important;
+  letter-spacing:.15px!important;
+}
+.card h3,.card .price,.sectionTitle,.categoryTabs button,.nav a{
+  letter-spacing:.2px!important;
+}
+.infoStrip{
+  position:relative!important;
+  z-index:20!important;
+  margin-bottom:30px!important;
+  overflow:visible!important;
+}
+.approvedHero{
+  position:relative!important;
+  z-index:1!important;
+  margin-top:0!important;
+  padding-top:0!important;
+  box-shadow:0 0 42px 20px #000!important;
+}
+.approvedHero img{
+  position:relative!important;
+  z-index:1!important;
+}
+@media(max-width:900px){
+  .infoStrip{
+    margin-bottom:42px!important;
+    min-height:72px!important;
+  }
+  .approvedHero{
+    margin-top:0!important;
+    box-shadow:0 0 24px 12px #000!important;
+  }
+  .nav a{font-size:9px!important}
+  .categoryTabs button{font-size:10px!important}
+  .card h3{font-size:13px!important}
+  .card p{font-size:9px!important}
+  .card .price{font-size:17px!important}
+}
