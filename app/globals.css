@@ -1,848 +1,377 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&display=swap');
 
-:root{--black:#030304;--cream:#f4eee5;--orange:#ff6200;--violet:#9d2cff;--violet2:#c84cff}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:#030304}body{margin:0;background:#030304;color:#fff;font-family:'Oswald',Arial,sans-serif}button,input,select,textarea{font:inherit}a{color:inherit;text-decoration:none}img{display:block}.site{min-height:100vh;background:#030304;overflow-x:hidden}
-
-/* header: same compact proportions as approved reference */
-.top{height:118px;display:grid;grid-template-columns:245px 1fr 315px;align-items:center;gap:18px;padding:0 max(24px,calc((100vw - 1240px)/2));background:#030304;position:sticky;top:0;z-index:70}
-.brandLockup{display:flex;align-items:center;gap:10px}.brandLockup>img{display:none}.wordmark{position:relative;display:flex;flex-direction:column;line-height:.78;isolation:isolate}.wordmark strong{font-family:'Permanent Marker',cursive;font-size:42px;transform:rotate(-3deg);letter-spacing:-2px;position:relative;z-index:2}.wordmark span{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;color:var(--orange);letter-spacing:1px;transform:rotate(-3deg);margin:8px 0 0 20px;position:relative;z-index:2}.logoSlash{display:none}
-.top nav{display:flex;justify-content:center;gap:31px}.top nav a{font-size:15px;font-weight:700;padding:43px 0 32px;position:relative}.top nav a:hover,.top nav .activeLink{color:#d34fff}.top nav a:after{content:"";position:absolute;left:50%;right:50%;bottom:25px;height:2px;background:#b32fff;transition:.2s}.top nav a:hover:after,.top nav .activeLink:after{left:0;right:0}.topActions{display:flex;align-items:center;justify-content:flex-end;gap:9px}.ig{display:none}.miniCart{width:45px;height:45px;border:0;background:none;color:#fff;position:relative;display:grid;place-items:center}.miniCart svg{width:26px}.miniCart b{position:absolute;right:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--orange);font-size:11px;display:grid;place-items:center}.waTop{min-width:228px;border:1px solid #7725a6;border-radius:26px;padding:11px 18px;background:#070609;display:flex;flex-direction:column}.waTop small{font-size:12px;color:#c74cff;font-weight:700}.waTop strong{font-size:17px}
-
-/* cream information strip */
-.infoStrip{max-width:1240px;margin:0 auto;padding:0 18px;min-height:89px;border-radius:14px;background:var(--cream);color:#111;display:grid;grid-template-columns:repeat(3,1fr);align-items:center}.infoStrip>div{height:56px;display:flex;justify-content:center;align-items:center;gap:15px;border-right:1px solid #aaa198}.infoStrip>div:last-child{border:0}.infoStrip svg{width:31px;height:31px;stroke:#9f2ee4}.infoStrip p{margin:0;display:flex;flex-direction:column}.infoStrip b{font-size:15px}.infoStrip span{font-family:Arial,sans-serif;font-size:14px}
-
-/* HERO rebuilt around the second reference */
-.hero2{max-width:1240px;height:505px;margin:0 auto;position:relative;overflow:hidden;display:grid;grid-template-columns:41% 59%;background:
-radial-gradient(ellipse at 78% 50%,#7117a438 0,transparent 42%),
-linear-gradient(180deg,#050506,#020203)}
-.hero2:before{content:"";position:absolute;inset:0;z-index:0;background:
-radial-gradient(circle at 1% 30%,#9d2cff 0 1px,transparent 2px),
-linear-gradient(115deg,transparent 0 54%,#8d21dc33 54.5% 55%,transparent 55.5%);
-opacity:.8}
-.heroCopy{position:relative;z-index:8;padding:59px 0 0 34px;display:flex;flex-direction:column;align-items:flex-start}
-.heroCopy h1{margin:0;font-family:'Anton',Impact,sans-serif;font-size:75px;line-height:.85;text-transform:uppercase;letter-spacing:-1px;color:#f5f3f0;text-shadow:2px 3px 0 #252525}
-.heroCopy h1 em{font-style:normal;color:var(--orange);text-shadow:2px 2px 0 #321100}
-.script{margin:27px 0 31px;font-family:'Permanent Marker',cursive;font-size:25px;transform:rotate(-4deg);position:relative;z-index:5}
-.orderBtn{height:61px;min-width:286px;border:2px solid #dd7bff;border-radius:15px;background:linear-gradient(105deg,#7516bd,#b32ef0);box-shadow:0 0 22px #a72fffaa;color:#fff;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.heroFood{position:relative;z-index:5;height:100%}
-.burgerHero{position:absolute;width:67%;height:78%;left:1%;bottom:9px;object-fit:cover;clip-path:ellipse(48% 48% at 50% 50%);filter:saturate(1.28) contrast(1.08);z-index:5}
-.pizzaHero{position:absolute;width:61%;aspect-ratio:1;right:-12%;bottom:-9%;object-fit:cover;border-radius:50%;filter:saturate(1.22) contrast(1.1);z-index:4;box-shadow:0 20px 50px #000b}
-
-/* strong brush strokes behind food, like approved visual */
-.paint{display:block;position:absolute;pointer-events:none;z-index:2}
-.paintViolet{background:linear-gradient(90deg,#6513a7,#b52cff)}
-.paintOrange{background:linear-gradient(90deg,#ff4c00,#ff7b00)}
-.pv1{width:420px;height:29px;left:20px;top:235px;transform:rotate(-5deg);clip-path:polygon(0 44%,75% 0,100% 20%,78% 44%,100% 69%,6% 100%)}
-.po1{width:570px;height:57px;left:330px;top:154px;transform:rotate(-11deg);clip-path:polygon(0 35%,85% 0,100% 20%,79% 44%,100% 66%,9% 100%)}
-.pv2{width:560px;height:46px;right:-40px;top:60px;transform:rotate(12deg);clip-path:polygon(0 20%,87% 0,100% 30%,80% 50%,100% 76%,10% 100%)}
-.po2{width:470px;height:34px;right:40px;bottom:50px;transform:rotate(-12deg);clip-path:polygon(0 42%,85% 0,100% 25%,82% 48%,100% 72%,8% 100%)}
-
-/* promo cards */
-.promoRow{max-width:1240px;margin:0 auto;padding:18px 18px 25px;display:grid;grid-template-columns:repeat(3,1fr);gap:17px;background:#030304}.promo{height:238px;border-radius:14px;overflow:hidden;position:relative;display:grid;grid-template-columns:49% 51%;background:#09090b;border:1px solid #9f2ee4}.promo>div{padding:20px 0 14px 22px;position:relative;z-index:4}.promo small,.promo strong{font-family:'Anton',Impact,sans-serif;font-size:34px;line-height:.92;display:block}.promo strong{color:#b83cff;margin:6px 0 16px}.promo.orange{border-color:#ff6500}.promo.orange strong{color:#ff6500}.promo p{font-size:15px;font-weight:700;line-height:1.45}.promo b{width:34px;height:34px;border-radius:50%;background:#9d2cff;display:grid;place-items:center;font-size:22px}.promo img{width:100%;height:100%;object-fit:cover;filter:saturate(1.2) contrast(1.08)}.promo:after{content:"";position:absolute;width:58%;height:27px;right:-5%;top:35%;background:#8e20d4;transform:rotate(-12deg);z-index:2;clip-path:polygon(0 40%,84% 0,100% 25%,80% 48%,100% 72%,7% 100%)}.promo.orange:after{background:#ff6100}
-
-/* menu/products */
-.menuDark{max-width:1240px;margin:0 auto;padding:0 18px 30px}.menuHead{display:flex;justify-content:space-between;align-items:end}.menuHead h2{font-family:'Anton',Impact,sans-serif;font-size:42px;margin:0}.menuHead span{display:block;width:130px;height:9px;background:#a12dff;transform:skew(-22deg) rotate(-3deg)}.menuHead button{border:0;background:none;color:#c84cff;font-weight:700}.menuTools{display:flex;justify-content:space-between;gap:15px;margin:11px 0 18px}.chips2{display:flex;gap:9px;overflow:auto}.chips2 button{border:1px solid #252329;background:#111116;color:#fff;border-radius:8px;padding:9px 15px;font-size:13px;white-space:nowrap}.chips2 button.sel{background:#9728df;border-color:#bd45ff}.search2{width:220px;height:40px;border:1px solid #302d34;border-radius:8px;background:#111116;display:flex;align-items:center;padding:0 10px}.search2 input{width:100%;background:none;border:0;outline:0;color:#fff}.productGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.productGrid article{background:#09090c;border:1px solid #8237ad;border-radius:11px;overflow:hidden;display:flex;flex-direction:column}.productGrid article.disabled{opacity:.45}.productPhoto{height:160px;position:relative;overflow:hidden;background:#111}.productPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(1.2) contrast(1.08)}.productPhoto span{position:absolute;left:8px;top:8px;background:#ff6500;border-radius:20px;padding:4px 8px;font-size:10px}.productInfo{padding:11px;display:flex;flex-direction:column;flex:1}.productInfo small{color:#a978c7;font-size:10px}.productInfo h3{font-size:17px;color:#c74cff;margin:5px 0 7px}.productInfo p{font-family:Arial,sans-serif;font-size:10px;line-height:1.45;color:#ddd;margin:0 0 13px}.productBottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center}.productBottom strong{font-family:'Bebas Neue',Impact,sans-serif;font-size:25px;color:#ff6500}.productBottom button{width:36px;height:36px;border:0;border-radius:5px;background:#a027e6;color:#fff}.productBottom button:disabled{background:#555}
-
-/* bottom benefits/footer */
-.benefits{max-width:1204px;margin:0 auto 14px;padding:20px 24px;border:1px solid #74309a;border-radius:13px;display:grid;grid-template-columns:repeat(3,1fr);background:#09090c}.benefits>div{display:flex;justify-content:center;align-items:center;gap:15px}.benefits svg{width:57px;height:57px;padding:12px;border:1px solid #a12ce6;border-radius:50%;stroke:#b53aff}.benefits p{display:flex;flex-direction:column;margin:0}.benefits b{font-size:17px}.benefits span{font-family:Arial,sans-serif;color:#ddd;font-size:12px}footer{max-width:1240px;margin:auto;padding:20px 30px 34px;border-top:1px solid #3d1d50;display:flex;justify-content:center;align-items:center;gap:90px;color:#bbb}footer p{font-family:Arial,sans-serif;text-align:center;font-size:12px}.floatingWa{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#20c85a;color:#fff;font-weight:800;z-index:45;border:1px solid #8dffac}
-
-/* cart */
-.stickyCart{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);width:min(570px,calc(100% - 28px));height:61px;padding:0 20px;border-radius:14px;border:1px solid #5c2b79;background:#0d0c10;color:#fff;z-index:48;display:flex;align-items:center;justify-content:space-between}.stickyCart span{display:flex;align-items:center;gap:9px}.stickyCart b{color:#ff6500}.overlay{position:fixed;inset:0;background:#000c;z-index:100;display:flex;justify-content:flex-end}.overlay aside{width:min(480px,100%);height:100%;padding:24px;background:#0a080d;border-left:1px solid #6e2a91;display:flex;flex-direction:column;overflow:auto}.drawerHead{display:flex;justify-content:space-between}.drawerHead small{color:#c248ff}.drawerHead h2{font-family:'Anton',Impact,sans-serif;font-size:38px;margin:3px 0}.drawerHead button,.qty button{border:1px solid #353039;background:#151219;color:#fff;border-radius:8px}.drawerHead button{width:42px;height:42px}.items{display:flex;flex-direction:column;gap:8px;margin:20px 0;flex:1}.item{display:flex;justify-content:space-between;align-items:center;border:1px solid #332b39;background:#101014;border-radius:10px;padding:12px}.item>div:first-child{display:flex;flex-direction:column}.item span{font-size:12px;color:#aaa}.qty{display:flex;align-items:center;gap:7px}.qty button{width:29px;height:29px}.qty svg{width:14px}.total{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid #302738}.total b{color:#ff6500;font-size:25px}.form{display:flex;flex-direction:column;gap:9px}.form input,.form select,.form textarea{background:#141118;color:#fff;border:1px solid #342b3b;border-radius:8px;padding:11px}.form textarea{min-height:78px}.checkout{height:52px;border:0;border-radius:9px;background:#9b28df;color:#fff;font-weight:800}
-
-@media(max-width:900px){
-.top{height:78px;grid-template-columns:1fr auto;padding:0 14px}.top nav,.waTop{display:none}.wordmark strong{font-size:27px}.wordmark span{font-size:18px;margin:5px 0 0 12px}.miniCart{width:45px}.infoStrip{margin:7px 8px 0;padding:0 5px;min-height:74px}.infoStrip>div{height:52px;gap:5px;padding:0 4px}.infoStrip svg{width:21px;height:21px}.infoStrip b{font-size:9px}.infoStrip span{font-size:8px}.hero2{height:510px;display:block}.heroCopy{padding:38px 17px 0}.heroCopy h1{font-size:53px}.script{font-size:18px;margin:19px 0 20px}.orderBtn{height:51px;min-width:230px;font-size:16px}.heroFood{position:absolute;left:0;right:0;bottom:0;height:250px}.burgerHero{width:64%;height:88%;left:10%;bottom:-4px}.pizzaHero{width:49%;right:-13%;bottom:-8px}.po1{width:320px;height:33px;left:85px;top:290px}.pv1{width:260px;height:20px;left:-20px;top:137px}.pv2{width:290px;height:25px;right:-90px;top:60px}.po2{width:260px;height:20px;right:-70px;bottom:65px}.promoRow{grid-template-columns:1fr;padding:10px 12px 18px;gap:10px}.promo{height:155px}.promo>div{padding:13px 0 9px 15px}.promo small,.promo strong{font-size:27px}.promo p{font-size:12px}.menuDark{padding:0 12px 25px}.menuHead h2{font-size:37px}.menuTools{flex-direction:column}.search2{width:100%}.productGrid{grid-template-columns:repeat(2,1fr);gap:9px}.productPhoto{height:137px}.productInfo{padding:9px}.productInfo h3{font-size:15px}.productInfo p{font-size:10px}.benefits{margin:0 12px 14px;grid-template-columns:1fr;padding:15px;gap:14px}.benefits>div{justify-content:flex-start}.benefits svg{width:47px;height:47px;padding:10px}footer{padding:20px 18px 95px;gap:14px;flex-direction:column}.floatingWa{right:14px;bottom:84px;width:58px;height:58px}}
-
-/* === FINAL VISUAL OVERRIDE: approved Kenjhi composition === */
-
-/* Restore the real uploaded brand logo in the ONLY allowed place: top-left */
-.brandLockup{
-  display:flex!important;
-  align-items:center!important;
-  gap:12px!important;
-  min-width:260px!important;
-}
-.brandLockup>img{
-  display:block!important;
-  width:72px!important;
-  height:72px!important;
-  flex:0 0 72px!important;
-  border-radius:50%!important;
-  object-fit:cover!important;
-  border:2px solid #9d2cff!important;
-  box-shadow:0 0 0 3px #120818,0 0 24px #9d2cff55!important;
-}
-.brandLockup .wordmark strong{
-  font-size:38px!important;
-}
-.brandLockup .wordmark span{
-  font-size:24px!important;
-  margin-left:12px!important;
-}
-
-/* approved reference header proportions */
-.top{
-  min-height:118px!important;
-  grid-template-columns:300px 1fr 330px!important;
-  background:#030304!important;
-  border-bottom:0!important;
-}
-.top nav{
-  gap:29px!important;
-}
-.waTop{
-  border:1px solid #8c2ed0!important;
-  border-radius:24px!important;
-  box-shadow:0 0 22px #8f2dce20!important;
-}
-
-/* the reference uses a wide compact cream service strip */
-.infoStrip{
-  max-width:1240px!important;
-  min-height:84px!important;
-  margin:10px auto 0!important;
-  border-radius:15px!important;
-  box-shadow:none!important;
-}
-
-/* HERO: remove the circular-card look completely */
-.hero2{
-  max-width:1240px!important;
-  height:515px!important;
-  margin:0 auto!important;
-  grid-template-columns:40% 60%!important;
-  background:
-    radial-gradient(ellipse at 72% 45%,#7417a23d 0%,transparent 43%),
-    linear-gradient(180deg,#050506 0%,#020203 100%)!important;
-  overflow:hidden!important;
-}
-.heroCopy{
-  padding:60px 0 0 34px!important;
-  z-index:10!important;
-}
-.heroCopy h1{
-  font-family:'Anton',Impact,sans-serif!important;
-  font-size:78px!important;
-  line-height:.84!important;
-  letter-spacing:-1px!important;
-}
-.heroCopy h1 em{
-  color:#ff6200!important;
-}
-.script{
-  font-family:'Permanent Marker',cursive!important;
-  font-size:25px!important;
-  margin:28px 0 30px!important;
-}
-.orderBtn{
-  min-width:290px!important;
-  height:61px!important;
-  background:linear-gradient(105deg,#791fc8,#b637f4)!important;
-  border:2px solid #dc75ff!important;
-  border-radius:15px!important;
-  box-shadow:0 0 26px #a72fff8c!important;
-}
-
-/* food becomes a poster-style composition rather than two circles */
-.heroFood{
-  position:relative!important;
-  height:515px!important;
-  min-height:515px!important;
-  overflow:visible!important;
-  z-index:7!important;
-}
-.burgerHero{
-  position:absolute!important;
-  left:4%!important;
-  bottom:4px!important;
-  width:64%!important;
-  height:86%!important;
-  object-fit:cover!important;
-  border-radius:0!important;
-  clip-path:none!important;
-  outline:0!important;
-  box-shadow:none!important;
-  filter:saturate(1.24) contrast(1.08) brightness(1.02)!important;
-  -webkit-mask-image:radial-gradient(ellipse 68% 66% at 50% 51%,#000 58%,transparent 88%)!important;
-  mask-image:radial-gradient(ellipse 68% 66% at 50% 51%,#000 58%,transparent 88%)!important;
-  z-index:8!important;
-}
-.pizzaHero{
-  position:absolute!important;
-  right:-8%!important;
-  bottom:-3%!important;
-  width:59%!important;
-  height:84%!important;
-  aspect-ratio:auto!important;
-  object-fit:cover!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  filter:saturate(1.2) contrast(1.08)!important;
-  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 54% 52%,#000 54%,transparent 91%)!important;
-  mask-image:radial-gradient(ellipse 72% 70% at 54% 52%,#000 54%,transparent 91%)!important;
-  z-index:6!important;
-}
-
-/* paint is intentionally bold and sits behind the food as in the approved image */
-.paint{
-  z-index:3!important;
-  opacity:1!important;
-  filter:drop-shadow(0 0 10px currentColor)!important;
-}
-.po1{
-  width:590px!important;
-  height:62px!important;
-  left:335px!important;
-  top:165px!important;
-  transform:rotate(-10deg)!important;
-  background:linear-gradient(90deg,#ff4c00,#ff7a00)!important;
-}
-.pv2{
-  width:610px!important;
-  height:50px!important;
-  right:-65px!important;
-  top:50px!important;
-  transform:rotate(11deg)!important;
-  background:linear-gradient(90deg,#6515b1,#a927ef)!important;
-}
-.pv1{
-  width:430px!important;
-  height:28px!important;
-  left:12px!important;
-  top:237px!important;
-  transform:rotate(-5deg)!important;
-  background:linear-gradient(90deg,#7a1ac8,#b42eff)!important;
-}
-.po2{
-  width:500px!important;
-  height:36px!important;
-  right:10px!important;
-  bottom:54px!important;
-  transform:rotate(-11deg)!important;
-  background:linear-gradient(90deg,#ff4e00,#ff7900)!important;
-}
-
-/* promo panels closer to the reference */
-.promoRow{
-  max-width:1240px!important;
-  gap:16px!important;
-  padding:18px 18px 24px!important;
-}
-.promo{
-  height:236px!important;
-  border-radius:14px!important;
-  grid-template-columns:48% 52%!important;
-}
-.promo small,.promo strong{
-  font-size:34px!important;
-}
-.promo img{
-  filter:saturate(1.25) contrast(1.1)!important;
-}
-
-/* menu cards and purple system */
-.menuDark{
-  max-width:1240px!important;
-}
-.productGrid{
-  grid-template-columns:repeat(6,minmax(0,1fr))!important;
-  gap:12px!important;
-}
-.productGrid article{
-  border-color:#8737b2!important;
-  background:#09090c!important;
-}
-.productInfo h3{
-  color:#c64dff!important;
-}
-.productBottom button{
-  background:linear-gradient(135deg,#8b21d5,#b333f1)!important;
-}
-
-/* logo must NOT be repeated anywhere else */
-footer .brandLockup,
-footer .wordmark{
-  display:none!important;
-}
-
-/* mobile gets its own composition; logo remains visible */
-@media(max-width:900px){
-  .top{
-    min-height:82px!important;
-    height:82px!important;
-    grid-template-columns:1fr auto!important;
-    padding:0 12px!important;
-  }
-  .brandLockup{
-    min-width:0!important;
-    gap:7px!important;
-  }
-  .brandLockup>img{
-    display:block!important;
-    width:48px!important;
-    height:48px!important;
-    flex-basis:48px!important;
-  }
-  .brandLockup .wordmark strong{
-    font-size:25px!important;
-  }
-  .brandLockup .wordmark span{
-    font-size:15px!important;
-    margin:5px 0 0 7px!important;
-  }
-  .infoStrip{
-    min-height:72px!important;
-    margin:7px 7px 0!important;
-  }
-  .hero2{
-    height:530px!important;
-    display:block!important;
-  }
-  .heroCopy{
-    padding:38px 17px 0!important;
-  }
-  .heroCopy h1{
-    font-size:54px!important;
-  }
-  .script{
-    font-size:18px!important;
-    margin:20px 0!important;
-  }
-  .orderBtn{
-    min-width:230px!important;
-    height:52px!important;
-    font-size:16px!important;
-  }
-  .heroFood{
-    position:absolute!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    height:258px!important;
-    min-height:258px!important;
-  }
-  .burgerHero{
-    width:66%!important;
-    height:95%!important;
-    left:5%!important;
-    bottom:-7px!important;
-  }
-  .pizzaHero{
-    width:55%!important;
-    height:92%!important;
-    right:-14%!important;
-    bottom:-8px!important;
-  }
-  .po1{
-    width:330px!important;
-    height:36px!important;
-    left:80px!important;
-    top:300px!important;
-  }
-  .pv2{
-    width:300px!important;
-    height:25px!important;
-    right:-90px!important;
-    top:62px!important;
-  }
-  .pv1{
-    width:270px!important;
-    height:20px!important;
-    left:-24px!important;
-    top:142px!important;
-  }
-  .po2{
-    width:280px!important;
-    height:20px!important;
-    right:-80px!important;
-    bottom:65px!important;
-  }
-  .productGrid{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  }
-}
-
-
-/* =========================================================
-   REFERENCE-LOCK v3 — VISUAL ONLY
-   Goal: mirror the approved Kenjhi poster composition.
-   No HTML, data, Supabase, cart, pricing or links changed.
-   ========================================================= */
-
 :root{
-  --ref-bg:#020203;
-  --ref-panel:#08080b;
-  --ref-purple:#a82bea;
-  --ref-purple-hot:#c23cff;
-  --ref-orange:#ff5b00;
-  --ref-cream:#f4eee6;
+  --black:#020203;
+  --panel:#08080b;
+  --cream:#f4eee6;
+  --orange:#ff5a00;
+  --purple:#a729eb;
+  --purple2:#cb40ff;
+  --line:#6d278f;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--black)}
+body{margin:0;background:var(--black);color:#fff;font-family:'Oswald',Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.site{min-height:100vh;background:
+radial-gradient(circle at 76% 23%,rgba(116,31,168,.15),transparent 25%),
+#020203;overflow-x:hidden}
 
-body,.site{background:var(--ref-bg)!important}
-
-/* HEADER — same visual rhythm as reference */
+/* HEADER */
 .top{
-  position:relative!important;
-  top:auto!important;
-  height:132px!important;
-  min-height:132px!important;
-  max-width:1280px!important;
-  margin:0 auto!important;
-  padding:0 26px!important;
-  display:grid!important;
-  grid-template-columns:245px 1fr 320px!important;
-  gap:18px!important;
-  background:#020203!important;
+  height:92px;
+  max-width:1536px;
+  margin:auto;
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:260px 1fr 345px;
+  align-items:center;
+  gap:24px;
+  background:#020203;
+  z-index:60;
 }
-.brandLockup{
-  min-width:0!important;
-  gap:0!important;
+.brandLockup{display:flex;align-items:center}
+.brandLockup>img{display:none}
+.wordmark{display:flex;flex-direction:column;line-height:.76;transform:rotate(-2deg)}
+.wordmark strong{
+  font-family:'Permanent Marker',cursive;
+  font-size:47px;
+  letter-spacing:-3px;
+  color:#f3efe8;
+  text-shadow:1px 2px 0 #242228;
 }
-.brandLockup>img{
-  display:none!important;
+.wordmark span{
+  margin:10px 0 0 23px;
+  font-family:'Bebas Neue',Impact,sans-serif;
+  font-size:26px;
+  letter-spacing:1.5px;
+  color:var(--orange);
 }
-.brandLockup .wordmark{
-  transform:rotate(-2deg)!important;
-}
-.brandLockup .wordmark strong{
-  font-family:'Permanent Marker',cursive!important;
-  font-size:48px!important;
-  line-height:.72!important;
-  letter-spacing:-3px!important;
-  color:#f5f2ed!important;
-  text-shadow:1px 2px 0 #343034!important;
-}
-.brandLockup .wordmark span{
-  font-family:'Bebas Neue',Impact,sans-serif!important;
-  font-size:28px!important;
-  line-height:1!important;
-  margin:11px 0 0 23px!important;
-  color:var(--ref-orange)!important;
-  letter-spacing:1.5px!important;
-}
-.top nav{
-  justify-content:center!important;
-  gap:36px!important;
-}
-.top nav a{
-  font-family:'Oswald',Arial,sans-serif!important;
-  font-size:16px!important;
-  font-weight:700!important;
-  padding:53px 0 38px!important;
-}
+.top nav{display:flex;justify-content:center;gap:38px}
+.top nav a{position:relative;font-size:15px;font-weight:700;padding:33px 0 30px}
+.top nav a:hover,.top nav .activeLink{color:#cd53ff}
 .top nav a:after{
-  bottom:30px!important;
-  height:2px!important;
-  background:var(--ref-purple-hot)!important;
+  content:"";
+  position:absolute;left:50%;right:50%;bottom:20px;height:2px;background:#ad32ea;transition:.2s
 }
-.topActions{
-  gap:10px!important;
-}
+.top nav a:hover:after,.top nav .activeLink:after{left:0;right:0}
+.topActions{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.ig{display:none}
 .waTop{
-  order:1!important;
-  min-width:238px!important;
-  min-height:58px!important;
-  border:1px solid #5f167f!important;
-  border-radius:31px!important;
-  padding:10px 18px!important;
-  background:#060508!important;
-  box-shadow:inset 0 0 0 1px #17051f!important;
+  order:1;
+  min-width:245px;
+  min-height:58px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:8px 18px;
+  border:1px solid #5d1a77;
+  border-radius:30px;
+  background:#07060a;
+  box-shadow:0 0 26px rgba(151,38,205,.12)
 }
-.waTop small{
-  font-size:12px!important;
-  color:#d36bff!important;
-}
-.waTop strong{
-  font-size:17px!important;
-}
+.waTop small{font-size:12px;color:#d16bff;font-weight:700}
+.waTop strong{font-size:18px}
 .miniCart{
-  order:2!important;
-  width:52px!important;
-  height:52px!important;
+  order:2;width:56px;height:56px;background:none;border:0;color:#fff;position:relative;display:grid;place-items:center
 }
-.miniCart svg{
-  width:31px!important;
-  height:31px!important;
-}
+.miniCart svg{width:30px;height:30px}
 .miniCart b{
-  width:22px!important;
-  height:22px!important;
-  font-size:12px!important;
-  right:-1px!important;
-  top:-1px!important;
+  position:absolute;right:2px;top:2px;width:22px;height:22px;border-radius:50%;
+  background:var(--orange);display:grid;place-items:center;font-size:12px
 }
 
-/* cream utility bar */
+/* SERVICE STRIP */
 .infoStrip{
-  max-width:1240px!important;
-  width:calc(100% - 32px)!important;
-  min-height:92px!important;
-  margin:0 auto!important;
-  padding:0 24px!important;
-  border-radius:15px!important;
-  background:var(--ref-cream)!important;
+  max-width:1486px;
+  width:calc(100% - 50px);
+  min-height:61px;
+  margin:0 auto;
+  padding:0 20px;
+  border-radius:13px;
+  background:var(--cream);
+  color:#131313;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  align-items:center;
 }
 .infoStrip>div{
-  height:59px!important;
-  gap:17px!important;
+  height:43px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  border-right:1px solid #afa69d;
 }
-.infoStrip svg{
-  width:34px!important;
-  height:34px!important;
-  stroke:var(--ref-purple)!important;
-  stroke-width:2.3!important;
-}
-.infoStrip b{font-size:16px!important}
-.infoStrip span{font-size:14px!important}
+.infoStrip>div:last-child{border-right:0}
+.infoStrip svg{width:29px;height:29px;stroke:var(--purple);stroke-width:2.2}
+.infoStrip p{margin:0;display:flex;flex-direction:column}
+.infoStrip b{font-size:14px}
+.infoStrip span{font:13px Arial,sans-serif}
 
-/* HERO — compact poster, text and food in ONE composition */
+/* HERO */
 .hero2{
-  max-width:1240px!important;
-  width:100%!important;
-  height:510px!important;
-  margin:0 auto!important;
-  display:grid!important;
-  grid-template-columns:40% 60%!important;
+  max-width:1536px;
+  height:325px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:43% 57%;
   background:
-    radial-gradient(circle at 82% 25%,rgba(107,20,163,.33),transparent 28%),
-    radial-gradient(circle at 87% 72%,rgba(125,25,179,.23),transparent 30%),
-    linear-gradient(180deg,#040405 0%,#020203 100%)!important;
+    radial-gradient(circle at 80% 35%,rgba(137,27,190,.30),transparent 28%),
+    radial-gradient(circle at 2% 28%,rgba(137,27,190,.18),transparent 18%),
+    linear-gradient(180deg,#030304,#020203);
 }
 .hero2:before{
-  opacity:.5!important;
+  content:"";
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(14deg,transparent 0 43%,rgba(122,33,166,.12) 44%,transparent 45%),
+    radial-gradient(circle at 4% 26%,#9f2eed 0 2px,transparent 3px);
 }
 .heroCopy{
-  padding:61px 0 0 40px!important;
+  position:relative;z-index:10;
+  padding:34px 0 0 135px;
+  display:flex;flex-direction:column;align-items:flex-start
 }
 .heroCopy h1{
-  font-family:'Anton',Impact,sans-serif!important;
-  font-size:79px!important;
-  line-height:.84!important;
-  letter-spacing:-1.5px!important;
-  color:#f3f0ec!important;
-  text-shadow:2px 3px 0 #29262a!important;
+  margin:0;
+  font-family:'Anton',Impact,sans-serif;
+  font-size:67px;
+  line-height:.82;
+  letter-spacing:-1px;
+  color:#f1efeb;
+  text-shadow:2px 3px 0 #242329
 }
-.heroCopy h1 em{
-  color:var(--ref-orange)!important;
-  text-shadow:2px 3px 0 #361000!important;
-}
+.heroCopy h1 em{font-style:normal;color:var(--orange);text-shadow:2px 2px 0 #401200}
 .script{
-  margin:28px 0 29px!important;
-  font-size:27px!important;
-  color:#fff!important;
+  position:relative;
+  margin:20px 0 16px 63px;
+  font-family:'Permanent Marker',cursive;
+  font-size:23px;
+  transform:rotate(-3deg);
 }
 .orderBtn{
-  min-width:300px!important;
-  height:62px!important;
-  border-radius:14px!important;
-  border:2px solid #e16dff!important;
-  background:linear-gradient(100deg,#7d20bd 0%,#c02ef0 100%)!important;
-  box-shadow:0 0 14px #d64cff,0 0 28px rgba(170,43,237,.65)!important;
-  font-size:21px!important;
+  margin-left:74px;
+  min-width:270px;height:53px;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid #da73ff;
+  border-radius:13px;
+  background:linear-gradient(105deg,#7a1fbc,#c12ff0);
+  box-shadow:0 0 12px #bd36f4,0 0 28px rgba(172,42,236,.55);
+  font-size:19px;font-weight:800;
 }
+.orderBtn:before{content:"◉";font-size:0;margin-right:0}
 
-.heroFood{
-  height:510px!important;
-}
+/* hero food, deliberately poster-like */
+.heroFood{position:relative;z-index:5;height:325px}
 .burgerHero{
-  left:0!important;
-  bottom:-6px!important;
-  width:63%!important;
-  height:91%!important;
-  object-fit:cover!important;
-  object-position:center!important;
-  -webkit-mask-image:radial-gradient(ellipse 67% 67% at 49% 53%,#000 59%,transparent 88%)!important;
-  mask-image:radial-gradient(ellipse 67% 67% at 49% 53%,#000 59%,transparent 88%)!important;
-  filter:saturate(1.38) contrast(1.09) brightness(1.03)!important;
+  position:absolute;left:11%;bottom:-18px;width:45%;height:112%;
+  object-fit:cover;object-position:center;
+  -webkit-mask-image:radial-gradient(ellipse 68% 67% at 50% 53%,#000 58%,transparent 88%);
+  mask-image:radial-gradient(ellipse 68% 67% at 50% 53%,#000 58%,transparent 88%);
+  filter:saturate(1.38) contrast(1.1) brightness(1.02);
+  z-index:7;
 }
 .pizzaHero{
-  right:-10%!important;
-  bottom:-11%!important;
-  width:62%!important;
-  height:88%!important;
-  object-fit:cover!important;
-  object-position:center!important;
-  -webkit-mask-image:radial-gradient(ellipse 74% 74% at 52% 51%,#000 57%,transparent 91%)!important;
-  mask-image:radial-gradient(ellipse 74% 74% at 52% 51%,#000 57%,transparent 91%)!important;
-  filter:saturate(1.32) contrast(1.08) brightness(1.02)!important;
+  position:absolute;right:-4%;bottom:-28px;width:55%;height:103%;
+  object-fit:cover;object-position:center;
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 51% 51%,#000 58%,transparent 91%);
+  mask-image:radial-gradient(ellipse 72% 70% at 51% 51%,#000 58%,transparent 91%);
+  filter:saturate(1.34) contrast(1.09);
+  z-index:6;
 }
-
-/* paint strokes: reference placement */
+.paint{display:block;position:absolute;z-index:2;pointer-events:none}
+.paintViolet{background:linear-gradient(90deg,#59109f,#b72ff2)}
+.paintOrange{background:linear-gradient(90deg,#ff4900,#ff7800)}
 .pv1{
-  width:430px!important;height:28px!important;
-  left:22px!important;top:259px!important;
-  transform:rotate(-5deg)!important;
+  width:470px;height:25px;left:95px;top:199px;transform:rotate(-6deg);
+  clip-path:polygon(0 44%,74% 0,100% 20%,79% 44%,100% 70%,7% 100%)
 }
 .po1{
-  width:600px!important;height:65px!important;
-  left:390px!important;top:128px!important;
-  transform:rotate(-12deg)!important;
+  width:640px;height:58px;left:620px;top:75px;transform:rotate(-12deg);
+  clip-path:polygon(0 35%,85% 0,100% 20%,80% 44%,100% 66%,8% 100%)
 }
 .pv2{
-  width:610px!important;height:47px!important;
-  right:-65px!important;top:69px!important;
-  transform:rotate(11deg)!important;
+  width:610px;height:42px;right:-72px;top:19px;transform:rotate(10deg);
+  clip-path:polygon(0 20%,88% 0,100% 30%,80% 50%,100% 76%,8% 100%)
 }
 .po2{
-  width:505px!important;height:37px!important;
-  right:12px!important;bottom:59px!important;
-  transform:rotate(-12deg)!important;
+  width:520px;height:33px;right:14px;bottom:24px;transform:rotate(-10deg);
+  clip-path:polygon(0 42%,85% 0,100% 25%,82% 48%,100% 72%,8% 100%)
 }
 
-/* PROMO CARDS */
+/* PROMOS */
 .promoRow{
-  max-width:1240px!important;
-  padding:18px 14px 27px!important;
-  grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:18px!important;
+  max-width:1408px;margin:0 auto;
+  padding:6px 0 15px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
 }
 .promo{
-  height:250px!important;
-  border-radius:13px!important;
-  background:#08080a!important;
-  grid-template-columns:48% 52%!important;
+  height:156px;
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:48% 52%;
+  border-radius:10px;border:1px solid #8e2bb7;
+  background:#08080a;
 }
-.promo>div{
-  padding:20px 0 14px 21px!important;
-}
+.promo.orange{border-color:#ff5d00}
+.promo>div{position:relative;z-index:5;padding:14px 0 9px 27px}
 .promo small,.promo strong{
-  font-size:36px!important;
-  line-height:.9!important;
+  display:block;font-family:'Anton',Impact,sans-serif;font-size:31px;line-height:.9
 }
-.promo p{
-  margin:18px 0 14px!important;
-  font-size:15px!important;
+.promo strong{margin:6px 0 11px;color:#b730ef}
+.promo.orange strong{color:#ff6500}
+.promo p{margin:0;font-size:13px;font-weight:700;line-height:1.35}
+.promo b{
+  margin-top:8px;width:25px;height:25px;border-radius:50%;
+  display:grid;place-items:center;background:#9f25df;font-size:16px
 }
-.promo img{
-  object-fit:cover!important;
-  filter:saturate(1.34) contrast(1.1) brightness(1.02)!important;
+.promo img{width:100%;height:100%;object-fit:cover;filter:saturate(1.33) contrast(1.1)}
+.promo:after{
+  content:"";position:absolute;width:60%;height:26px;right:-5%;top:42%;
+  background:#8f1ed1;transform:rotate(-12deg);z-index:2;
+  clip-path:polygon(0 40%,84% 0,100% 25%,80% 48%,100% 72%,7% 100%)
 }
+.promo.orange:after{background:#ff5c00}
 
-/* MENU — typography, spacing and six-across card composition */
-.menuDark{
-  max-width:1240px!important;
-  padding:0 14px 32px!important;
-}
-.menuHead h2{
-  font-size:41px!important;
-}
-.menuHead span{
-  width:118px!important;
-  height:9px!important;
-}
-.menuTools{
-  margin:12px 0 20px!important;
-}
+/* MENU */
+.menuDark{max-width:1430px;margin:0 auto;padding:0 0 17px}
+.menuHead{display:flex;justify-content:space-between;align-items:end}
+.menuHead h2{margin:0;font-family:'Anton',Impact,sans-serif;font-size:33px}
+.menuHead span{display:block;width:105px;height:7px;background:#9f26e2;transform:skew(-22deg) rotate(-3deg)}
+.menuHead button{border:0;background:none;color:#d252ff;font-weight:700;font-size:12px}
+.menuTools{display:flex;justify-content:space-between;gap:12px;margin:3px 0 9px}
+.chips2{display:flex;gap:12px;overflow:auto}
 .chips2 button{
-  height:38px!important;
-  padding:8px 15px!important;
-  border-radius:7px!important;
-  background:#111116!important;
+  border:1px solid #242229;background:#0f1014;color:#fff;border-radius:7px;
+  padding:7px 18px;font-size:11px;white-space:nowrap
 }
-.chips2 button.sel{
-  background:linear-gradient(100deg,#7d22c6,#b62de9)!important;
-}
-.productGrid{
-  grid-template-columns:repeat(6,minmax(0,1fr))!important;
-  gap:12px!important;
-}
+.chips2 button.sel{background:linear-gradient(100deg,#8a20ce,#b82def);border-color:#c15bff}
+.search2{display:none}
+.productGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
 .productGrid article{
-  min-width:0!important;
-  border-radius:11px!important;
-  border:1px solid #8732b0!important;
-  background:#08080b!important;
+  background:#07070a;border:1px solid #742798;border-radius:9px;overflow:hidden;display:grid;
+  grid-template-columns:44% 56%;
+  min-height:145px;
 }
-.productPhoto{
-  height:168px!important;
+.productGrid article.disabled{opacity:.45}
+.productPhoto{height:100%;position:relative;overflow:hidden;background:#111}
+.productPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(1.25) contrast(1.08)}
+.productPhoto span{
+  position:absolute;left:6px;top:6px;background:var(--orange);border-radius:12px;padding:3px 7px;font-size:8px
 }
-.productPhoto img{
-  filter:saturate(1.33) contrast(1.09)!important;
-}
-.productInfo{
-  padding:10px 11px 12px!important;
-}
-.productInfo small{
-  display:none!important;
-}
+.productInfo{padding:9px 9px 7px;display:flex;flex-direction:column;min-width:0}
+.productInfo small{display:none}
 .productInfo h3{
-  margin:0 0 7px!important;
-  font-family:'Oswald',Arial,sans-serif!important;
-  font-size:17px!important;
-  font-weight:700!important;
-  text-transform:uppercase!important;
-  color:#c84cff!important;
+  margin:0 0 7px;color:#ca42ff;font-size:14px;line-height:1.1;text-transform:uppercase
 }
 .productInfo p{
-  font-size:10px!important;
-  line-height:1.5!important;
-  min-height:45px!important;
+  margin:0 0 7px;font:10px/1.45 Arial,sans-serif;color:#eee;display:-webkit-box;
+  -webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden
 }
-.productBottom strong{
-  font-size:27px!important;
-  color:var(--ref-orange)!important;
-}
+.productBottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.productBottom strong{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;color:var(--orange)}
 .productBottom button{
-  width:35px!important;
-  height:35px!important;
-  border-radius:5px!important;
+  width:26px;height:26px;border:0;border-radius:4px;background:#9f24df;color:#fff;display:grid;place-items:center
 }
+.productBottom button svg{width:17px;height:17px}
+.productBottom button:disabled{background:#555}
 
-/* BENEFITS / FOOTER */
+/* BENEFITS + FOOTER */
 .benefits{
-  max-width:1210px!important;
-  margin:0 auto 13px!important;
-  padding:19px 24px!important;
-  border-color:#7f2aa6!important;
-  background:#09090c!important;
+  max-width:1438px;margin:0 auto 5px;padding:11px 26px;
+  border:1px solid #662382;border-radius:10px;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:#07070a;
 }
-.benefits svg{
-  stroke:#c33fff!important;
-}
+.benefits>div{display:flex;justify-content:center;align-items:center;gap:14px}
+.benefits svg{width:46px;height:46px;padding:10px;border:1px solid #a227df;border-radius:50%;stroke:#c13bfa}
+.benefits p{margin:0;display:flex;flex-direction:column}
+.benefits b{font-size:14px}
+.benefits span{font:11px Arial,sans-serif;color:#ddd;margin-top:3px}
 footer{
-  max-width:1240px!important;
-  border-top:0!important;
-  padding:18px 26px 35px!important;
+  max-width:1438px;margin:auto;padding:8px 12px 18px;
+  display:flex;justify-content:center;align-items:center;gap:90px;color:#aaa
 }
+footer p{margin:0;font:11px/1.4 Arial,sans-serif;text-align:center}
+footer a{font-size:12px}
 .floatingWa{
-  width:65px!important;
-  height:65px!important;
-  right:23px!important;
-  bottom:22px!important;
+  position:fixed;right:34px;bottom:34px;width:60px;height:60px;border-radius:50%;
+  display:grid;place-items:center;background:#16c95c;color:#fff;font-weight:800;z-index:45;border:1px solid #74ffa5
 }
 
-/* MOBILE — keep the SAME art direction instead of turning it into a different page */
+/* CART */
+.stickyCart{
+  position:fixed;left:50%;bottom:15px;transform:translateX(-50%);
+  width:min(570px,calc(100% - 28px));height:58px;padding:0 20px;border-radius:13px;
+  border:1px solid #5a2674;background:#0b0a0e;color:#fff;z-index:48;
+  display:flex;align-items:center;justify-content:space-between
+}
+.stickyCart span{display:flex;align-items:center;gap:9px}.stickyCart b{color:var(--orange)}
+.overlay{position:fixed;inset:0;background:#000c;z-index:100;display:flex;justify-content:flex-end}
+.overlay aside{width:min(480px,100%);height:100%;padding:24px;background:#0a080d;border-left:1px solid #6e2a91;display:flex;flex-direction:column;overflow:auto}
+.drawerHead{display:flex;justify-content:space-between}.drawerHead small{color:#c248ff}.drawerHead h2{font-family:'Anton',Impact,sans-serif;font-size:38px;margin:3px 0}
+.drawerHead button,.qty button{border:1px solid #353039;background:#151219;color:#fff;border-radius:8px}
+.drawerHead button{width:42px;height:42px}.items{display:flex;flex-direction:column;gap:8px;margin:20px 0;flex:1}
+.item{display:flex;justify-content:space-between;align-items:center;border:1px solid #332b39;background:#101014;border-radius:10px;padding:12px}
+.item>div:first-child{display:flex;flex-direction:column}.item span{font-size:12px;color:#aaa}
+.qty{display:flex;align-items:center;gap:7px}.qty button{width:29px;height:29px}.qty svg{width:14px}
+.total{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid #302738}.total b{color:var(--orange);font-size:25px}
+.form{display:flex;flex-direction:column;gap:9px}.form input,.form select,.form textarea{background:#141118;color:#fff;border:1px solid #342b3b;border-radius:8px;padding:11px}
+.form textarea{min-height:78px}.checkout{height:52px;border:0;border-radius:9px;background:#9b28df;color:#fff;font-weight:800}
+
 @media(max-width:900px){
   .top{
-    height:92px!important;
-    min-height:92px!important;
-    padding:0 18px!important;
-    grid-template-columns:1fr auto!important;
+    height:84px;grid-template-columns:1fr auto;padding:0 15px
   }
-  .brandLockup .wordmark strong{
-    font-size:35px!important;
-  }
-  .brandLockup .wordmark span{
-    font-size:21px!important;
-    margin:8px 0 0 15px!important;
-  }
-
+  .top nav,.waTop{display:none}
+  .wordmark strong{font-size:32px}
+  .wordmark span{font-size:18px;margin:7px 0 0 12px}
+  .miniCart{width:48px;height:48px}
   .infoStrip{
-    width:calc(100% - 20px)!important;
-    min-height:92px!important;
-    margin:4px auto 0!important;
-    padding:0 8px!important;
+    width:calc(100% - 18px);min-height:84px;padding:0 5px;margin:0 auto
   }
-  .infoStrip>div{
-    height:62px!important;
-    gap:7px!important;
-  }
-  .infoStrip svg{
-    width:25px!important;height:25px!important;
-  }
-  .infoStrip b{font-size:10px!important}
-  .infoStrip span{font-size:9px!important}
+  .infoStrip>div{height:57px;gap:5px;padding:0 4px}
+  .infoStrip svg{width:22px;height:22px}
+  .infoStrip b{font-size:9px}.infoStrip span{font-size:8px}
 
   .hero2{
-    height:465px!important;
-    display:block!important;
-    overflow:hidden!important;
+    height:470px;display:block
   }
   .heroCopy{
-    width:57%!important;
-    padding:50px 0 0 18px!important;
-    position:relative!important;
-    z-index:12!important;
+    width:58%;padding:48px 0 0 18px
   }
-  .heroCopy h1{
-    font-size:50px!important;
-    line-height:.86!important;
-  }
-  .script{
-    font-size:17px!important;
-    margin:19px 0 21px!important;
-    white-space:nowrap!important;
-  }
-  .orderBtn{
-    min-width:216px!important;
-    height:53px!important;
-    font-size:16px!important;
-  }
-  .heroFood{
-    position:absolute!important;
-    inset:0!important;
-    height:465px!important;
-    min-height:465px!important;
-  }
-  .burgerHero{
-    left:37%!important;
-    bottom:-13px!important;
-    width:58%!important;
-    height:73%!important;
-  }
-  .pizzaHero{
-    right:-24%!important;
-    bottom:-6%!important;
-    width:55%!important;
-    height:58%!important;
-  }
-  .pv1{
-    left:-25px!important;
-    top:233px!important;
-    width:250px!important;
-    height:18px!important;
-  }
-  .po1{
-    left:42%!important;
-    top:147px!important;
-    width:320px!important;
-    height:34px!important;
-  }
-  .pv2{
-    right:-105px!important;
-    top:60px!important;
-    width:315px!important;
-    height:26px!important;
-  }
-  .po2{
-    right:-70px!important;
-    bottom:51px!important;
-    width:260px!important;
-    height:19px!important;
-  }
+  .heroCopy h1{font-size:51px;line-height:.85}
+  .script{font-size:17px;margin:18px 0 19px 8px;white-space:nowrap}
+  .orderBtn{margin-left:6px;min-width:220px;height:51px;font-size:16px}
+  .heroFood{position:absolute;inset:0;height:470px}
+  .burgerHero{left:35%;bottom:-7px;width:59%;height:71%}
+  .pizzaHero{right:-23%;bottom:-2px;width:56%;height:55%}
+  .pv1{width:250px;height:18px;left:-22px;top:233px}
+  .po1{width:320px;height:34px;left:43%;top:151px}
+  .pv2{width:300px;height:25px;right:-90px;top:65px}
+  .po2{width:260px;height:18px;right:-75px;bottom:54px}
 
-  .promoRow{
-    display:grid!important;
-    grid-template-columns:1fr!important;
-    gap:11px!important;
-    padding:13px 11px 19px!important;
-  }
-  .promo{
-    height:165px!important;
-  }
-  .promo small,.promo strong{
-    font-size:29px!important;
-  }
+  .promoRow{grid-template-columns:1fr;padding:10px 11px 15px;gap:10px}
+  .promo{height:160px}
+  .promo small,.promo strong{font-size:28px}
 
-  .menuDark{
-    padding:0 11px 28px!important;
-  }
-  .menuTools{
-    flex-direction:column!important;
-  }
-  .productGrid{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    gap:9px!important;
-  }
-  .productPhoto{
-    height:143px!important;
-  }
-  .productInfo h3{
-    font-size:14px!important;
-  }
-  .productInfo p{
-    min-height:58px!important;
-    font-size:9.5px!important;
-  }
-  .productBottom strong{
-    font-size:23px!important;
-  }
+  .menuDark{padding:0 11px 24px}
+  .menuHead h2{font-size:35px}
+  .menuTools{flex-direction:column}
+  .productGrid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .productGrid article{grid-template-columns:1fr;min-height:0}
+  .productPhoto{height:145px}
+  .productInfo{padding:9px}
+  .productInfo h3{font-size:15px}
+  .productInfo p{font-size:9.5px;min-height:44px}
+  .productBottom strong{font-size:22px}
+
+  .benefits{margin:0 11px 8px;grid-template-columns:1fr;padding:13px;gap:12px}
+  .benefits>div{justify-content:flex-start}
+  footer{padding:15px 18px 90px;gap:14px;flex-direction:column}
+  .floatingWa{right:15px;bottom:82px;width:58px;height:58px}
 }
