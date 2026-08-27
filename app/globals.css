@@ -259,3 +259,33 @@ footer .wordmark strong{font-size:28px}
  .pv2{width:230px;height:22px;right:-50px;top:60px}
  .po2{width:250px;height:20px;right:-55px;bottom:35px}
 }
+
+/* Final brand lockup: official logo appears only in top-left */
+.brandLockup{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:230px;
+}
+.brandLockup>img{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  object-fit:cover;
+  flex:0 0 auto;
+  border:2px solid #a63dff;
+  box-shadow:0 0 0 2px #1a0b25,0 0 22px #9b30ff44;
+}
+.brandLockup .wordmark{
+  min-width:0;
+}
+footer .wordmark,
+footer .brandLockup{
+  display:none!important;
+}
+@media(max-width:800px){
+  .brandLockup{min-width:0;gap:8px}
+  .brandLockup>img{width:46px;height:46px}
+  .brandLockup .wordmark strong{font-size:24px}
+  .brandLockup .wordmark span{font-size:13px}
+}
