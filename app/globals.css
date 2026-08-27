@@ -222,3 +222,40 @@ footer .wordmark strong{font-size:28px}
   .promoRow{padding-top:14px}
   .productGrid article{border-color:#7336a5}
 }
+
+/* Real Kenjhi logo treatment + paint strokes */
+.wordmarkPaint{position:relative;isolation:isolate;padding:4px 8px 6px 4px}
+.wordmarkPaint strong,.wordmarkPaint span{position:relative;z-index:3}
+.logoSlash{position:absolute;display:block;z-index:1;pointer-events:none;transform:skewX(-18deg) rotate(-5deg);filter:saturate(1.2)}
+.slashOne{left:-6px;top:11px;width:118px;height:18px;background:linear-gradient(90deg,#8b2cff,#c03cff);clip-path:polygon(0 38%,80% 0,100% 26%,86% 44%,100% 66%,8% 100%)}
+.slashTwo{left:42px;bottom:3px;width:112px;height:12px;background:linear-gradient(90deg,#ff5b00,#ff8b00);clip-path:polygon(0 22%,88% 0,100% 35%,82% 52%,96% 70%,5% 100%)}
+.wordmarkPaint strong{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-style:italic;letter-spacing:.04em;-webkit-text-stroke:.4px #fff;text-shadow:2px 2px 0 #111,0 0 18px #9b30ff40}
+.wordmarkPaint span{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-style:italic;letter-spacing:.08em;text-shadow:1px 1px 0 #3a1500,0 0 16px #ff6a0050}
+
+/* prominent brush paint in hero */
+.paint{position:absolute;display:block;pointer-events:none;z-index:1;opacity:.9;filter:drop-shadow(0 0 12px currentColor)}
+.paintViolet{color:#9b30ff;background:linear-gradient(90deg,#7a24d4,#c13cff)}
+.paintOrange{color:#ff6a00;background:linear-gradient(90deg,#ff4f00,#ff8a00)}
+.pv1{width:390px;height:34px;left:20px;top:170px;transform:rotate(-8deg);clip-path:polygon(0 45%,72% 0,100% 22%,78% 40%,98% 66%,15% 100%,0 80%,12% 62%)}
+.po1{width:330px;height:42px;left:275px;top:260px;transform:rotate(-6deg);clip-path:polygon(0 24%,88% 0,100% 18%,82% 38%,100% 64%,10% 100%,0 75%,17% 58%)}
+.pv2{width:370px;height:30px;right:40px;top:82px;transform:rotate(13deg);opacity:.72;clip-path:polygon(0 38%,75% 0,100% 25%,80% 45%,98% 70%,12% 100%)}
+.po2{width:430px;height:28px;right:-20px;bottom:74px;transform:rotate(-11deg);opacity:.6;clip-path:polygon(0 45%,80% 0,100% 20%,77% 42%,100% 68%,6% 100%)}
+.heroCopy,.heroFood{position:relative;z-index:3}
+
+/* paint accents behind section headings and promo cards */
+.menuHead>div{position:relative;isolation:isolate}
+.menuHead>div:before{content:"";position:absolute;left:-8px;bottom:-6px;width:150px;height:16px;background:linear-gradient(90deg,#8e2bdf,#b83cff);transform:rotate(-4deg);clip-path:polygon(0 35%,86% 0,100% 25%,82% 48%,98% 75%,4% 100%);z-index:-1;opacity:.9}
+.promo:after{content:"";position:absolute;width:55%;height:34px;right:-7%;top:16px;transform:rotate(-13deg);clip-path:polygon(0 45%,85% 0,100% 28%,82% 48%,100% 70%,9% 100%);opacity:.45;pointer-events:none}
+.promo.purple:after,.promo.pink:after{background:linear-gradient(90deg,#8a2bdd,#ca45ff)}
+.promo.orange:after{background:linear-gradient(90deg,#ff5e00,#ff8b00)}
+.productPhoto:after{content:"";position:absolute;left:-8%;bottom:-1px;width:64%;height:10px;background:linear-gradient(90deg,#922ee5,#bd42ff);transform:rotate(-3deg);clip-path:polygon(0 30%,90% 0,100% 32%,82% 55%,95% 76%,6% 100%);opacity:.7}
+
+@media(max-width:800px){
+ .wordmarkPaint{padding-left:2px}
+ .slashOne{width:98px;height:14px;top:10px}
+ .slashTwo{width:90px;height:9px;left:31px}
+ .pv1{width:260px;height:25px;left:-15px;top:155px}
+ .po1{width:250px;height:30px;left:95px;top:250px}
+ .pv2{width:230px;height:22px;right:-50px;top:60px}
+ .po2{width:250px;height:20px;right:-55px;bottom:35px}
+}
