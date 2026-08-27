@@ -57,17 +57,9 @@ export default function Page(){
   </section>
 
   <main id="top">
-   <section className="hero2"><i className="paint paintViolet pv1"/><i className="paint paintOrange po1"/><i className="paint paintViolet pv2"/><i className="paint paintOrange po2"/>
-    <div className="heroCopy">
-      <h1>SABORES<br/><em>QUE ENAMORAN</em></h1>
-      <p className="script">Hechos con amor, para vos</p>
-      <a className="orderBtn" href="#menu">HACÉ TU PEDIDO</a>
-    </div>
-    <div className="heroFood">
-      <img className="burgerHero" src="https://pngimg.com/d/burger_sandwich_PNG4104.png" alt="Hamburguesa gourmet Kenjhi"/>
-      <img className="pizzaHero" src="https://pngimg.com/d/pizza_PNG43988.png" alt="Pizza pepperoni Kenjhi"/>
-    </div>
-   </section>
+   <a className="approvedHero" href="#menu" aria-label="Hacé tu pedido">
+    <img src="/hero-kenjhi.png" alt="Sabores que enamoran - Kenjhi Fast Food"/>
+   </a>
 
    <section className="promoRow" id="destacados">
     <a href="#menu" className="promo purple" onClick={()=>setActive('hamburguesas')}><div><small>COMBOS</small><strong>EXPLOSIVOS</strong><p>MÁS RICOS,<br/>MÁS COMPLETOS</p><b>→</b></div><img src={catImg.hamburguesas}/></a>
