@@ -1,1 +1,15 @@
-__PLACEHOLDER__
+'use client';
+import {useEffect,useState} from 'react';
+import {supabase} from '@/lib/supabase';
+type P={id:string;name:string;price:number;is_available:boolean};
+const money=(n:number)=>new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0}).format(n);
+export default function Admin(){
+ const[email,setEmail]=useState(''),[password,setPassword]=useState(''),[ok,setOk]=useState(false),[products,setProducts]=useState<P[]>([]),[msg,setMsg]=useState('');
+ const load=async()=>{const{data}=await supabase.from('products').select('id,name,price,is_available').order('sort_order');setProducts((data||[]) as P[])};
+ useEffect(()=>{supabase.auth.getSession().then(({data})=>{setOk(!!data.session);if(data.session)load()})},[]);
+ const login=async()=>{const{error}=await supabase.auth.signInWithPassword({email,password});if(error)return setMsg(error.message);setOk(true);setMsg('');load()};
+ const toggle=async(p:P)=>{const{error}=await supabase.from('products').update({is_available:!p.is_available}).eq('id',p.id);if(error)return setMsg('Tu usuario no tiene permisos de administrador.');setProducts(v=>v.map(x=>x.id===p.id?{...x,is_available:!x.is_available}:x))};
+ const price=async(p:P)=>{const v=prompt('Nuevo precio para '+p.name,String(p.price));if(!v)return;const n=Number(v);if(!Number.isInteger(n)||n<0)return;const{error}=await supabase.from('products').update({price:n}).eq('id',p.id);if(error)return setMsg('No se pudo cambiar el precio.');setProducts(a=>a.map(x=>x.id===p.id?{...x,price:n}:x))};
+ if(!ok)return <main style={{minHeight:'100vh',background:'#090a0d',display:'grid',placeItems:'center',padding:20}}><div style={{width:'min(410px,100%)',background:'#fff4dd',padding:30,borderRadius:22,display:'grid',gap:12}}><img src="/kenjhi-logo.jpg" style={{width:85,height:85,borderRadius:'50%'}}/><h1>Admin Kenjhi</h1><input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} style={{padding:12}}/><input type="password" placeholder="Contraseña" value={password} onChange={e=>setPassword(e.target.value)} style={{padding:12}}/><button onClick={login} style={{padding:13,background:'#111',color:'#fff',border:0}}>INGRESAR</button>{msg&&<small>{msg}</small>}</div></main>;
+ return <main style={{maxWidth:900,margin:'auto',padding:'45px 18px'}}><a href="/">← Volver a la tienda</a><h1 style={{fontSize:44}}>Panel Kenjhi</h1><p>Disponibilidad y precios</p>{msg&&<p>{msg}</p>}<div style={{display:'grid',gap:8}}>{products.map(p=><div key={p.id} style={{background:'#fff',border:'1px solid #e6d6bb',borderRadius:13,padding:13,display:'flex',justifyContent:'space-between',gap:10,alignItems:'center'}}><div><b>{p.name}</b><br/><small>{money(p.price)}</small></div><div style={{display:'flex',gap:6}}><button onClick={()=>toggle(p)}>{p.is_available?'Disponible':'Agotado'}</button><button onClick={()=>price(p)}>Precio</button></div></div>)}</div></main>
+}
