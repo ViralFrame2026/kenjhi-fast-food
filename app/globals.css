@@ -830,3 +830,25 @@ footer{max-width:1024px!important}
     height:31px!important;
   }
 }
+
+
+/* HERO BRAND TYPOGRAPHY PATCH */
+.heroCopy h1,
+.heroCopy h1 em{
+  font-family:'Permanent Marker',cursive!important;
+  font-style:normal!important;
+  letter-spacing:-2px!important;
+  text-transform:uppercase!important;
+}
+.heroCopy h1{
+  font-size:62px!important;
+  line-height:.88!important;
+  transform:rotate(-2deg);
+}
+.heroCopy h1 em{
+  color:var(--orange)!important;
+  text-shadow:2px 3px 0 #351000!important;
+}
+@media(max-width:900px){
+  .heroCopy h1{font-size:40px!important;line-height:.9!important}
+}
