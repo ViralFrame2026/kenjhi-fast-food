@@ -8,6 +8,29 @@ type Prod={id:string;category_id:string;name:string;description:string|null;pric
 type Cart={p:Prod;q:number};
 
 const money=(n:number)=>new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0}).format(n);
+const categoryNotes:Record<string,{title?:string;lines:string[]}>={
+ hamburguesas:{lines:[
+  '📌 Todas las hamburguesas llevan papas fritas.',
+  '➕ Medallón extra: $1.500.',
+  '➕ Feta de queso cheddar: $1.000.'
+ ]},
+ pizzas:{lines:[
+  '📌 Se pueden pedir pizzas mixtas.'
+ ]},
+ tacos:{title:'Agregados',lines:[
+  '➕ Cebolla caramelizada: $500.',
+  '➕ Troceado de jamón: $500.',
+  '➕ Gratinado queso Tybo: $800.',
+  '➕ Gratinado queso cheddar: $1.000.',
+  'Los agregados tienen precio por unidad.',
+  '📌 Se pueden pedir tacos mixtos.'
+ ]},
+ burritos:{lines:[
+  '📌 Se le puede agregar picante.',
+  '📌 Si quieren el relleno de los burritos con vacío desmenuzado: $13.000.'
+ ]}
+};
+
 const catImg:Record<string,string>={
  hamburguesas:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85',
  'pollo-smash':'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=900&q=85',
@@ -73,6 +96,10 @@ export default function Page(){
       <div className="chips2"><button className={active==='all'?'sel':''} onClick={()=>setActive('all')}>Todo</button>{cats.map(c=><button key={c.id} className={active===c.slug?'sel':''} onClick={()=>setActive(c.slug)}>{c.name}</button>)}</div>
       <div className="search2"><Search size={18}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar producto..."/></div>
     </div>
+    {active!=='all'&&categoryNotes[active]&&<div className="categoryNote">
+      {categoryNotes[active].title&&<strong>{categoryNotes[active].title}</strong>}
+      {categoryNotes[active].lines.map((line,i)=><p key={i}>{line}</p>)}
+    </div>}
     <div className="productGrid">{filtered.map(p=>{const c=cats.find(x=>x.id===p.category_id);return <article className={!p.is_available?'disabled':''} key={p.id}>
       <div className="productPhoto"><img src={imageFor(p)} alt={p.name}/>{p.is_promo&&<span>PROMO</span>}</div>
       <div className="productInfo"><small>{c?.name}</small><h3>{p.name}</h3><p>{p.description||'Preparado al momento, con todo el sabor Kenjhi.'}</p><div className="productBottom"><strong>{money(p.price)}</strong><button disabled={!p.is_available} onClick={()=>add(p)}><Plus/></button></div></div>
